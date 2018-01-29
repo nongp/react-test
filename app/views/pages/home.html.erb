@@ -9,15 +9,15 @@
     <div class="col-md-3">
       <%= text_field_tag :search, params[:search], placeholder: "คุณกำลังจะเดินทางไปไหนล่ะ?", class: "form-control", id: "autolocation" %>
     </div>
-    <div class="col-md-3">
-      <%= text_field_tag :start_date, params[:start_date], placeholder: "ตั้งแต่วันที่", class: "form-control datepicker" %>
-    </div>
-    <div class="col-md-3">
-      <%= text_field_tag :end_date, params[:end_date], placeholder: "ถึงวันที่", class: "form-control datepicker" %>
-    </div>
      <div class="col-md-3">
       <%= text_field_tag :accommodate, params[:accommodate], placeholder: "สำหรับ 2 ท่าน", class: "form-control" %>
       </div>
+    <div class="col-md-3">
+      <%= text_field_tag :start_date, params[:start_date], placeholder: "Check in", class: "form-control datepicker" %>
+    </div>
+    <div class="col-md-3">
+      <%= text_field_tag :end_date, params[:end_date], placeholder: "Check out", class: "form-control datepicker" %>
+    </div>   
   </div>
   <br/><br/>
 
