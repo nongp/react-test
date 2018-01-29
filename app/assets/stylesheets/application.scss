@@ -15,11 +15,11 @@ a {
 }
 
 .container {
-  width: 85%;
+  width: 80%;
 }
 
 .text-babu, .icon-babu {
-  color: #ffffff;
+  color: #b7b7b7;
 }
 
 .text-red, .icon-red {
@@ -45,14 +45,14 @@ a {
 // BUTTONS
 .btn-block {
   display: block;
-  white-space: normal;
+  white-space: wide;
   width: 100%;
 }
 
 .btn {
   color: #ffffff;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: normal;
   padding: 9px 27px;
 }
 
@@ -467,7 +467,7 @@ a {
 }
 
 .fc-past {
-  background-color: lightgray;
+  background-color: #cedde5;
 }
 
 .fc-day {
@@ -494,8 +494,9 @@ a {
 
 .day-price {
   position: absolute;
-  color: #012060;
-  button: 2px;
+  font-size: 12px;
+  color: #00A699;
+  bottom: 1px;
   right: 2px;
 }
 
