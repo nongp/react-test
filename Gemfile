@@ -18,12 +18,12 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'sqlite3'
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'listen', '~> 3.0.5'
+gem 'spring'
+gem 'spring-watcher-listen', '~> 2.0.0'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -57,7 +57,9 @@ gem 'chartkick', '~> 2.2.4'
 
 gem 'omise'
 
+gem 'pg', '~> 0.18'
+
 group :production do
-  gem 'pg', '~> 0.18'
+
   gem 'rails_12factor'
  end
