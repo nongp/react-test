@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-md-7 banner">
+    <h1><span class="text-red">ค้นหา</span> & <span class="text-blue">จองที่พักสำหรับทริปคุณ!</span></h1>
+  </div>
+</div>
+
+<%= form_tag search_path, method: :get do %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= text_field_tag :search, params[:search], placeholder: "คุณกำลังจะเดินทางไปไหนล่ะ?", class: "form-control", id: "autolocation" %>
+    </div>
+    <div class="col-md-3">
+      <%= text_field_tag :start_date, params[:start_date], placeholder: "ตั้งแต่วันที่", class: "form-control datepicker" %>
+    </div>
+    <div class="col-md-3">
+      <%= text_field_tag :end_date, params[:end_date], placeholder: "ถึงวันที่", class: "form-control datepicker" %>
+    </div>
+     <div class="col-md-3">
+      <%= text_field_tag :accommodate, params[:accommodate], placeholder: "สำหรับ 2 ท่าน", class: "form-control" %>
+      </div>
+  </div>
+  <br/><br/>
+
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <%= submit_tag "ค้นหา", class: "btn btn-normal btn-block" %>
+    </div>
+  </div>
+<% end %>
+
+<br/><hr/><br/>
+
+<!-- HOMES -->
+<div><h3>ที่พัก</h3></div>
+<br/>
+
+<div class="row">
+  <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
+ 
+</div>
+
+<!-- CITIES -->
+<div><h3>Where to?</h3></div>
+<br/>
+
+<div class="row">
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?utf8=%E2%9C%93&search=bangkok">
+      <div class="discovery-card" style="background-image: url('/assets/bangkok_staynplay.jpg')"></div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?utf8=%E2%9C%93&search=huahin">
+      <div class="discovery-card" style="background-image: url('/assets/huahin_staynplay.jpg')"></div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?utf8=%E2%9C%93&search=pattaya">
+      <div class="discovery-card" style="background-image: url('/assets/pattaya_staynplay.jpg')"></div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?utf8=%E2%9C%93&search=hotels">
+      <div class="discovery-card" style="background-image: url('/assets/staynplay-swimming.jpg')"></div>
+    </a>
+  </div>
+</div></div>
+
+
+<script>
+  $('#start_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#end_date').datepicker("option", "minDate", selected);
+      $('#end_date').attr("disabled", false);
+    }
+  });
+
+  $('#end_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#start_date').datepicker("option", "maxDate", selected);
+    }
+  });
+
+  $(function() {
+    $("#autolocation").geocomplete();
+  })
+</script>

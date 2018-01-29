@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "ตั้งค่าการชำระเงิน", payment_method_path, class: "sidebar-link active" %></li>
+      <li class="sidebar-item"><%= link_to "ตั้งค่าการรับเงิน", payout_method_path, class: "sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "คั้งค่าการแจ้งเตือน", notification_settings_path, class: "sidebar-link" %></li>
+    </ul>
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">ตั้งค่าการชำระเงิน</div>
+      <div class="panel-body">
+        <div class="container">
+           <%= form_tag("/add_card", method: "POST", id: "add-card") do %>
+              
+                  <div id="token_errors"></div>
+
+                      <input type="hidden" name="omise_token">
+
+                      <div>
+                        ชื่อบนบัตร<br>
+                        <input type="text" data-omise="holder_name">
+                      </div>
+                      <div>
+                        หมายเลขบัตร<br>
+                        <input type="text" data-omise="number">
+                      </div>
+                      <div>
+                        วันหมดอายุ<br>
+                        <input type="text" data-omise="expiration_month" size="4"> /
+                        <input type="text" data-omise="expiration_year" size="8">
+                      </div>
+                      <div>
+                        CVV<br>
+                        <input type="text" data-omise="security_code" size="8">
+                      </div>
+                      <br/>
+                      <div>
+                      <input type="submit" id="create_token">
+                      </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.omise.co/omise.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+
+<script>
+/*$(document).on("turbolinks:load", function() {*/
+// Set your Omise public key to authenticate against Omise API. This allows card information to be sent directly to Omise.
+  Omise.setPublicKey('pkey_test_53x6wu9xs4h7zqkzq37');
+
+    $("#add-card").submit(function () {
+
+        var form = $(this);
+
+        // Disable the submit button to avoid repeated click.
+        form.find("input[type=submit]").prop("disabled", true);
+
+        // Serialize the form fields into a valid card object.
+        var card = {
+          "name": form.find("[data-omise=holder_name]").val(),
+          "number": form.find("[data-omise=number]").val(),
+          "expiration_month": form.find("[data-omise=expiration_month]").val(),
+          "expiration_year": form.find("[data-omise=expiration_year]").val(),
+          "security_code": form.find("[data-omise=security_code]").val()
+      };
+
+      // Send a request to create a token then trigger the callback function once
+      // a response is received from Omise.
+      //
+      // Note that the response could be an error and this needs to be handled within
+      // the callback.
+      Omise.createToken("card", card, function (statusCode, response) {
+        if (response.object == "error" || !response.card.security_code_check) {
+          // Display an error message.
+          var message_text = "SET YOUR SECURITY CODE CHECK FAILED MESSAGE";
+          if(response.object == "error") {
+            message_text = response.message;
+          }
+          $("#token_errors").html(message_text);
+
+          // Re-enable the submit button.
+          form.find("input[type=submit]").prop("disabled", false);
+        } else {
+          // Then fill the omise_token.
+          form.find("[name=omise_token]").val(response.id);
+          console.log(response.message);
+
+          // Remove card number from form before submiting to server.
+          form.find("[data-omise=number]").val("");
+          form.find("[data-omise=security_code]").val("");
+
+          // submit token to server.
+          form.get(0).submit();
+        };
+      });
+
+      // Prevent the form from being submitted;
+      return false;
+  });
+</script>
