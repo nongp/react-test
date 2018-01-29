@@ -8,29 +8,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "AirKong", root_path, class: "navbar-brand" %>
+      <%= link_to "StayNPlay", root_path, class: "navbar-brand" %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
           <div class="form-group">
-            <%= text_field_tag :search, params[:search], placeholder: "Anywhere", class: "form-control" %>
+            <%= text_field_tag :search, params[:search], placeholder: "ค้นหาที่พัก", class: "form-control" %>
           </div>
       <% end %>
 
       <ul class="nav navbar-nav navbar-right">
         <li>
           <button class="btn btn-form btn-small">
-            <%= link_to "Become a host", new_room_path, style: "color: white; text-decoration: none;" %>
+            <%= link_to "ร่วมเป็น Host", new_room_path, style: "color: black; text-decoration: none;" %>
           </button>
         </li>
 
         <% if (!user_signed_in?) %>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "เข้าสู่ระบบ", new_user_session_path, style: "color: lightgrey;" %></li>
+            <li><%= link_to "สมัครสมาชิก", new_user_registration_path, style: "color: lightgrey;" %></li>
         <% else %>
             <li>
               <%= link_to notifications_path do %>
-                <i class="fa fa-bell fa-2x icon-babu"></i>
+                <i class="fa fa-envelope fa-2x icon-babu"></i>
                 <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
               <% end %>
             </li>
@@ -41,14 +41,14 @@
                     <%= current_user.fullname %> <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Dashboard", dashboard_path %></li>
-                <li><%= link_to "Manage Listing", rooms_path %></li>
-                <li><%= link_to "List Your Space", new_room_path %></li>
-                <li><%= link_to "Your Reservations", your_reservations_path %></li>
-                <li><%= link_to "Your Trips", your_trips_path %></li>
+                <li><%= link_to "แผงควบคุม", dashboard_path %></li>
+                <li><%= link_to "ที่พักของฉัน", rooms_path %></li>
+                <li><%= link_to "เพิ่มที่พัก", new_room_path %></li>
+                <li><%= link_to "การเข้าพัก", your_reservations_path %></li>
+                <li><%= link_to "ทริปของฉัน", your_trips_path %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "แก้ไขโปรไฟล์", edit_user_registration_path %></li>
+                <li><%= link_to "ออกจากระบบ", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
         <% end %>
@@ -58,15 +58,15 @@
 </nav>
 
 <% if (user_signed_in?) && !current_page?(root_path) && !current_page?("/rooms/#{params[:id]}")%>
-    <nav class="navbar navbar-default" style="background-color: #565A5C">
+    <nav class="navbar navbar-default" style="background-color: #edecc7" >
       <div class="container">
         <ul class="nav navbar-nav">
-          <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "Dashboard", dashboard_path %></li>
-          <li <% if current_page?(rooms_path) %> class="active" <% end %> ><%= link_to "Manage Listings", rooms_path %></li>
-          <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "Messages", conversations_path %></li>
-          <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
-          <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "Host Calendar", host_calendar_path %></li>
-          <li <% if current_page?(payment_method_path) %> class="active" <% end %> ><%= link_to "Account Settings", payment_method_path %></li>
+          <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "แผงควบคุม", dashboard_path %></li>
+          <li <% if current_page?(rooms_path) %> class="active" <% end %> ><%= link_to "ที่พักของฉัน", rooms_path %></li>
+          <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "ข้อความ", conversations_path %></li>
+          <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "รายรับ", revenues_path %></li>
+          <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "ปฏิทิน", host_calendar_path %></li>
+          <li <% if current_page?(payment_method_path) %> class="active" <% end %> ><%= link_to "ตั้งค่า", payment_method_path %></li>
         </ul>
       </div>
     </nav>

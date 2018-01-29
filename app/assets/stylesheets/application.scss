@@ -312,9 +312,9 @@ a {
 }
 
 .form-control.datepicker {
-  color: #012060;
+  color: #CFD7DF;
   background-color: white;
-  border: 1px solid #012060;
+  border: 1px solid #CFD7DF;
   text-align: center;
 }
 
@@ -406,7 +406,7 @@ a {
   float: right;
 }
 
-.field::-webkit-input-placeholder { color: #CFD7DF; }
+.field::-webkit-input-placeholder { color: #CFD7DF; text-align: center; }
 .field::-moz-placeholder { color: #CFD7DF; }
 .field:-ms-input-placeholder { color: #CFD7DF; }
 

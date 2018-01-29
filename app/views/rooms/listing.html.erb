@@ -6,7 +6,7 @@
     <div class="panel panel-default">
 
       <div class="panel-heading">
-        Listing
+        เพิ่มที่พัก
       </div>
 
       <div class="panel-body">
@@ -17,54 +17,54 @@
 
               <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>Home Type</label>
-                  <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]],
-                                id: "home_type", prompt: "Select...", class: "form-control" %>
+                  <label>ประเภทที่พัก</label>
+                  <%= f.select :home_type, [["คอนโด", "Condo"], ["บ้านพักและพูลวิลล่า", "House"], ["โรงแรม", "Hotel"], ["รีสอร์ท", "Resort"], ["ห้องเช่า", "Guest House"]],
+                                id: "home_type", prompt: "กรุณาเลือก...", class: "form-control" %>
                 </div>
               </div>
 
               <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>Room Type</label>
-                  <%= f.select :room_type, [["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]],
-                                id: "room_type", prompt: "Select...", class: "form-control" %>
+                  <label>ประเภทห้องของที่พัก</label>
+                  <%= f.select :room_type, [["บ้าน/อพาร์ทเมนท์ทั้งหลัง", "Entire"], ["ห้องส่วนตัว", "Private"], ["ห้องแบ่งเช่า", "Shared"]],
+                                id: "room_type", prompt: "กรุณาเลือก...", class: "form-control" %>
                 </div>
               </div>
 
               <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>Booking Type</label>
-                  <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "Select...", class: "form-control" %>
+                  <label>ลักษณะการรับจอง</label>
+                  <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "กรุณาเลือก...", class: "form-control" %>
                 </div>
               </div>
 
               <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>Accommodate</label>
-                  <%= f.select :accommodate, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
-                                id: "accommodate", prompt: "Select...", class: "form-control" %>
+                  <label>เข้าพักได้</label>
+                  <%= f.select :accommodate, [["2 ท่าน", 2], ["3 ท่าน", 3], ["4 ท่าน", 4], ["5 ท่าน", 5], ["6 ท่าน", 6], ["7 ท่าน", 7], ["8 ท่าน", 8], ["9 ท่าน", 9], ["10 ท่าน", 10], ["11 ท่าน", 11], ["12 ท่าน", 12], ["13 ท่าน", 13], ["14 ท่าน", 14],["15+", 15]],
+                                id: "accommodate", prompt: "กรุณาเลือก...", class: "form-control" %>
                 </div>
               </div>
 
               <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>Bedrooms</label>
-                  <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
-                                id: "bed_room", prompt: "Select...", class: "form-control" %>
+                  <label>ห้องนอน</label>
+                  <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]],
+                                id: "bed_room", prompt: "กรุณาเลือก...", class: "form-control" %>
                 </div>
               </div>
 
               <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>Bathrooms</label>
-                  <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
-                                id: "bath_rooms", prompt: "Select...", class: "form-control" %>
+                  <label>ห้องน้ำ</label>
+                  <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]],
+                                id: "bath_rooms", prompt: "กรุณาเลือก...", class: "form-control" %>
                 </div>
               </div>
 
             </div>
 
-            <div><%= f.submit "Save", class: "btn btn-normal" %></div>
+            <div><%= f.submit "บันทึก", class: "btn btn-normal" %></div>
 
           <% end %>
         </div>
