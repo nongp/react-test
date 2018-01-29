@@ -93,8 +93,8 @@ Rails.application.configure do
      s3_host_name: 's3-ap-southeast-1.amazonaws.com',
      s3_credentials: {
        bucket: 'staynplay',
-       access_key_id: 'AKIAJXG2LVWHW76EMA2A',
-       secret_access_key: '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',
+       access_key_id: 'AKIAIWKVUG37CDA6JMBQ',
+       secret_access_key: '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',
        s3_region: 'ap-southeast-1'
      }
     }
