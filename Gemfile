@@ -60,6 +60,6 @@ gem 'omise'
 gem 'pg', '~> 0.18'
 
 group :production do
-
+  gem 'redis'
   gem 'rails_12factor'
  end
