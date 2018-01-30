@@ -6,9 +6,9 @@ class ReservationsController < ApplicationController
     room = Room.find(params[:room_id])
 
     if current_user == room.user
-      flash[:alert] = "You cannot book your own property!"
-    elsif current_user.stripe_id.blank?
-      flash[:alert] = "Please update your payment method."
+      flash[:alert] = "คุณไม่สามารถจองบ้านตัวเองได้ค่ะ!"
+    elsif current_user.omise_id.blank?
+      flash[:alert] = "กรุณาอัพเดทวิธีการชำระเงิน"
       return redirect_to payment_method_path
     else
       start_date = Date.parse(reservation_params[:start_date])
@@ -33,12 +33,12 @@ class ReservationsController < ApplicationController
 
       if @reservation.Waiting!
         if room.Request?
-          flash[:notice] = "Request sent successfully!"
+          flash[:notice] = "เราได้ทำการส่งคำขอของคุณแล้ว!"
         else
           charge(room, @reservation)
         end
       else
-        flash[:alert] = "Cannot make a reservation!"
+        flash[:alert] = "ไม่สามารถจองได้ค่ะ!"
       end
 
     end
