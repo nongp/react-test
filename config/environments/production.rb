@@ -37,7 +37,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
- config.action_cable.allowed_request_origins = [ 'http://murmuring-bastion-34979.herokuapp.com', 'https://murmuring-bastion-34979.herokuapp.com' ]
+ config.action_cable.allowed_request_origins = [ 'http://www.staynplay.club', 'https://www.staynplay.club' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -70,9 +70,9 @@ Rails.application.configure do
 
    config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_cable.url = "wss://murmuring-bastion-34979.herokuapp.com/cable"
+  config.action_cable.url = "wss://www.staynplay.club/cable"
 
-  config.action_mailer.default_url_options = { host: 'murmuring-bastion-34979.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'www.staynplay.club' }
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
