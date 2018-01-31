@@ -12,7 +12,8 @@ class RoomsController < ApplicationController
   end
 
   def create
-    #if !current_user.is_active_host
+    #if !current_user.is_active_host 
+
     #  return redirect_to payout_method_path, alert: "Please Connect to Stripe Express first."
     #end
 
@@ -24,6 +25,7 @@ class RoomsController < ApplicationController
       render :new
     end
   end
+
 
   def show
     @photos = @room.photos
