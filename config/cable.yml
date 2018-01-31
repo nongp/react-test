@@ -6,4 +6,6 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:e672b246ad4e8735faaf0aac1d63fd06@soldierfish.redistogo.com:10159/
+  password: e672b246ad4e8735faaf0aac1d63fd06
+  port: 10159
