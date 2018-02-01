@@ -72,7 +72,7 @@ Rails.application.configure do
 
   config.action_cable.url = "wss://www.staynplay.club/cable"
 
-  config.action_mailer.default_url_options = { host: 'www.staynplay.club' }
+  config.action_mailer.default_url_options = { host: 'mg.staynplay.club' }
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
@@ -81,10 +81,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
    address: 'smtp.mailgun.org',
     port: 587,
-    Domain: 'sandbox39e0cbde9d0a4069a3e4201630fa5c67.mailgun.org',
+    Domain: 'mg.staynplay.club',
     authentication: 'plain',
-    user_name: 'postmaster@sandbox39e0cbde9d0a4069a3e4201630fa5c67.mailgun.org',
-    password: '5d1fd00638901a64158cefa81d359600'
+    user_name: 'postmaster@mg.staynplay.club',
+    password: '3f81f9067ee0716fe968ba28cdf0d201'
   }
 
     config.paperclip_defaults = {

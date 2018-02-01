@@ -19,7 +19,7 @@ a {
 }
 
 .text-babu, .icon-babu {
-  color: #b7b7b7;
+  color: #615d63;
 }
 
 .text-red, .icon-red {
@@ -30,10 +30,22 @@ a {
   color: #012060;
 }
 
+.icon-white {
+  color: #eeeeee;
+}
+
+.icon-green {
+  color: #00bc09;
+}
+
+.text-babu, .icon-grey {
+  color: #615d63;
+}
+
 // NAVBARS
 .navbar-default {
   color: #ffffff;
-  background-color: #012060;
+  background-color: #428bca;
 }
 
 .navbar-default .navbar-brand {
@@ -69,7 +81,7 @@ a {
   width: 100%;
   border-color: #012060;
   background: white;
-  color: #eeeeee;
+  color: #615d63;
   border-radius: 2px;
   padding: 10px 0;
   margin-top: 10px;
@@ -83,7 +95,7 @@ a {
 .btn.btn-normal:active {
   outline: none;
   border-color: #012060;
-  background-color: #012060;
+  background-color: #5bc0de;
 }
 // Become a host button
 .btn.btn-form {
@@ -110,7 +122,7 @@ a {
 // All PANELS
 .panel-default .panel-heading {
   color: #eeeeee;
-  background-color: #012060;
+  background-color: #428bca;
   font-size: 18px;
   font-weight: 400;
 }

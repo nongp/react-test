@@ -30,7 +30,7 @@
         <% else %>
             <li>
               <%= link_to notifications_path do %>
-                <i class="fa fa-envelope fa-2x icon-babu"></i>
+                <i class="fa fa-envelope fa-2x icon-white"></i>
                 <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
               <% end %>
             </li>
@@ -64,7 +64,7 @@
           <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "แผงควบคุม", dashboard_path %></li>
           <li <% if current_page?(rooms_path) %> class="active" <% end %> ><%= link_to "ที่พักของฉัน", rooms_path %></li>
           <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "ข้อความ", conversations_path %></li>
-          <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "รายรับ", revenues_path %></li>
+          <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "รายได้", revenues_path %></li>
           <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "ปฏิทิน", host_calendar_path %></li>
           <li <% if current_page?(payment_method_path) %> class="active" <% end %> ><%= link_to "ตั้งค่า", payment_method_path %></li>
         </ul>

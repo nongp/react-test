@@ -3,8 +3,8 @@
     <!-- SEARCH PANEL -->
     <div class="row">
       <div class="col-md-offset-4 col-md-4">
-        <button id="filter" class="btn btn-default" data-toggle="collapse" data-target="#collapsePanel">
-          More filters <i class="fa fa-chevron-down"></i>
+        <button id="filter" class="btn btn-form btn-small" data-toggle="collapse" data-target="#collapsePanel" style: "color: grey";>
+          ตัวกรองเพิ่มเติม <i class="fa fa-chevron-down"></i>
         </button>
       </div>
     </div>
@@ -17,15 +17,15 @@
 
               <div class="row">
                 <div class="col-md-8">
-                  <label>Price range:</label>
+                  <label>ราคา:</label>
                   <div id="slider-range"></div>
                 </div>
                 <div class="col-md-2">
-                  <label>Min Price:</label>
+                  <label>ต่ำสุด:</label>
                   <%= f.text_field :price_gteq, class: "form-control" %>
                 </div>
                 <div class="col-md-2">
-                  <label>Max Price:</label>
+                  <label>สูงสุด:</label>
                   <%= f.text_field :price_lteq, class: "form-control" %>
                 </div>
               </div>
@@ -33,23 +33,23 @@
 
               <div class="row">
                 <div class="col-md-6">
-                  <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
+                  <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Check in", class: "form-control datepicker" %>
                 </div>
                 <div class="col-md-6">
-                  <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
+                  <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "Check out", class: "form-control datepicker" %>
                 </div>
               </div>
               <hr/>
 
               <div class="row">
                 <div class="col-md-4">
-                  <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+                  <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> บ้านทั้งหลัง
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private
+                  <%= check_box_tag "q[room_type_eq_any][]", "Private" %> ห้องส่วนตัว
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared
+                  <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> ห้องแบ่งเช่า
                 </div>
               </div>
               <hr/>
@@ -57,20 +57,20 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group select">
-                    <label>Accommodate</label>
-                    <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], id: "accommodate", prompt: "Select...", class: "form-control" %>
+                    <label>พักได้</label>
+                    <%= f.select :accommodate_gteq, [["1 ท่าน", 1], ["2 ท่าน", 2], ["3 ท่าน", 3], ["4 ท่าน", 4], ["5 ท่าน", 5], ["6 ท่าน", 6], ["7 ท่าน", 7], ["8 ท่าน", 8], ["9 ท่าน", 9], ["10 ท่าน", 10], ["11 ท่าน", 11], ["12 ท่าน", 12], ["13 ท่าน", 13], ["14 ท่าน", 14], ["15 ท่าน", 15]], id: "accommodate", prompt: "กรองผลลัพท์", class: "form-control" %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group select">
-                    <label>Bedrooms</label>
-                    <%= f.select :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], id: "bed_room", prompt: "Select...", class: "form-control" %>
+                    <label>ห้องนอน</label>
+                    <%= f.select :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9+", 9]], id: "bed_room", prompt: "กรองผลลัพท์", class: "form-control" %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group select">
-                    <label>Bathrooms</label>
-                    <%= f.select :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], id: "bath_rooms", prompt: "Select...", class: "form-control" %>
+                    <label>ห้องน้ำ</label>
+                    <%= f.select :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9+", 9]], id: "bath_rooms", prompt: "กรองผลลัพท์", class: "form-control" %>
                   </div>
                 </div>
               </div>
@@ -78,25 +78,25 @@
 
               <div class="row">
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_tv_eq]", true %> TV
+                  <%= check_box_tag "q[is_tv_eq]", true %> ทีวี
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_kitchen_eq]", true %> Kitchen
+                  <%= check_box_tag "q[is_kitchen_eq]", true %> ห้องครัว
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_Internet_eq]", true %> Internet
+                  <%= check_box_tag "q[is_Internet_eq]", true %> WiFi
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_heating_eq]", true %> Heating
+                  <%= check_box_tag "q[is_heating_eq]", true %> เครื่องทำน้ำร้อน
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_air_eq]", true %> Air Conditioning
+                  <%= check_box_tag "q[is_air_eq]", true %> เครื่องปรับอากาศ
                 </div>
               </div>
               <hr/>
 
               <div class="row text-center">
-                <%= f.submit "Search", class: "btn btn-form" %>
+                <%= f.submit "ค้นหา", class: "btn btn-form" %>
               </div>
           <% end %>
       </div>
@@ -118,7 +118,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBir_sMZTVXPjLCxc9dHYdj9PSAk3bQMM&libraries=places"></script>
     <script>
         function initialize(rooms) {
-          var location = {lat: 44.5403, lng: -78.5463}
+          var location = {lat: 13.736717, lng: 100.523186}
 
           if (rooms.length > 0) {
             location = {lat: rooms[0].latitude, lng: rooms[0].longitude}
@@ -177,9 +177,9 @@
 
   $('#filter').click(function() {
     if (open) {
-      $('#filter').html("More filters <i class='fa fa-chevron-up'></i>")
+      $('#filter').html("ตัวกรองเพิ่มเติม <i class='fa fa-chevron-up'></i>")
     } else {
-      $('#filter').html("More filters <i class='fa fa-chevron-down'></i>")
+      $('#filter').html("ตัวกรองเพิ่มเติม  <i class='fa fa-chevron-down'></i>")
     }
     open = !open;
   });
@@ -187,14 +187,14 @@
 
 <script>
   $(function() {
-    $("#q_price_gteq").val('100');
-    $("#q_price_lteq").val('500');
+    $("#q_price_gteq").val('300');
+    $("#q_price_lteq").val('10000');
 
     $("#slider-range").slider({
       range: true,
-      min: 0,
-      max: 1000,
-      values: [100, 500],
+      min: 300,
+      max: 30000,
+      values: [300, 30000],
       slide: function(event, ui) {
         $("#q_price_gteq").val(ui.values[0]);
         $("#q_price_lteq").val(ui.values[1]);

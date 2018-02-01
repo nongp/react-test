@@ -27,7 +27,7 @@
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>ลักษณะการรับจอง</label>
+              <label>รูปแบบการรับจอง</label>
               <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "กรุณาเลือก...", class: "form-control" %>
             </div>
           </div>
@@ -43,7 +43,7 @@
           <div class="col-md-4 select">
             <div class="form-group">
               <label>ห้องนอน</label>
-              <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+              <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9+", 9]],
                             id: "bed_room", prompt: "กรุณาเลือก...", class: "form-control" %>
             </div>
           </div>
@@ -51,7 +51,7 @@
           <div class="col-md-4 select">
             <div class="form-group">
               <label>ห้องน้ำ</label>
-              <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]],
+              <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9+", 9]],
                             id: "bath_rooms", prompt: "กรุณาเลือก...", class: "form-control" %>
             </div>
           </div>

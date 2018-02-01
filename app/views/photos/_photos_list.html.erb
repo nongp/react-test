@@ -10,7 +10,7 @@
           </div>
           <div class="panel-body">
             <span class="pull-right">
-              <%= link_to room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
+              <%= link_to room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "คุณแน่ใจหรือไม่ว่าต้องการลบรูปนี้?"} do %>
                 <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
               <% end %>
             </span>

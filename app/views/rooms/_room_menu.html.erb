@@ -1,34 +1,34 @@
 <ul class="sidebar-list">
   <li class="sidebar-item">
     <%= link_to "ข้อมูลที่พัก", listing_room_path, class: "sidebar-link active" %>
-    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
   </li>
   <li class="sidebar-item">
     <%= link_to "ราคา", pricing_room_path, class: "sidebar-link active" %>
     <% if !@room.price.blank? %>
-      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+      <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "รายละเอียด", description_room_path, class: "sidebar-link active" %>
     <% if !@room.listing_name.blank? %>
-      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+      <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "รูปภาพ", photo_upload_room_path, class: "sidebar-link active" %>
     <% if !@room.photos.blank? %>
-      <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
+      <span id="photo_check" class="pull-right icon-green"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "สิ่งอำนวยความสะดวก", amenities_room_path, class: "sidebar-link active" %>
-    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
   </li>
   <li class="sidebar-item">
-    <%= link_to "ที่ตั้ง", location_room_path, class: "sidebar-link active" %>
+    <%= link_to "ที่อยู่", location_room_path, class: "sidebar-link active" %>
     <% if !@room.address.blank? %>
-      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+      <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
 </ul>
@@ -38,7 +38,7 @@
 
 <%= form_for @room do |f| %>
   <%= f.hidden_field :active, value: true %>
-  <%= f.submit "เพิ่มที่พักแห่งนี้", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+  <%= f.submit "เพิ่มที่พัก", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
 <br/>
 <div class="row"> การเพิ่มที่พักบน StayNPlay นั้นไม่มีค่าใช้จ่ายค่ะ ที่พักของคุณจะถูกเผยแพร่หลังจากผ่านการตรวจสอบจากทีมงาน (อาจใช้เวลา 2 - 3 วัน) ทั้งนี้เจ้าหน้าที่ของเราอาจทำการติดต่อเพื่อสอบถามรายละเอียดเพิ่มเติม</div>
 

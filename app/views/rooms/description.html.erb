@@ -6,7 +6,7 @@
     <div class="panel panel-default">
 
       <div class="panel-heading">
-        Description
+        รายละเอียดที่พัก
       </div>
 
       <div class="panel-body">
@@ -15,20 +15,20 @@
 
             <div class="row">
               <div class="form-group">
-                <label>Listing name</label>
-                <%= f.text_field :listing_name, placeholder: "What is your listing name?", class: "form-control", required: true %>
+                <label>ชื่อที่พัก</label>
+                <%= f.text_field :listing_name, placeholder: "", class: "form-control", required: true %>
               </div>
             </div>
 
             <div class="row">
               <div class="form-group">
-                <label>Summary</label>
-                <%= f.text_area :summary, rows: 5, placeholder: "Summary of your house", class: "form-control", required: true %>
+                <label>รายละเอียด</label>
+                <%= f.text_area :summary, rows: 5, placeholder: "บรรยายคร่าวๆ เกี่ยวกับที่พักคุณ", class: "form-control", required: true %>
               </div>
             </div>
 
             <div class="text-center">
-              <%= f.submit "Save", class: "btn btn-form" %>
+              <%= f.submit "บันทึก", class: "btn btn-form" %>
             </div>
 
           <% end %>
