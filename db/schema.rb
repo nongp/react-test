@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111102722) do
+ActiveRecord::Schema.define(version: 20180201140613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,13 @@ ActiveRecord::Schema.define(version: 20180111102722) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "instant",      default: 1
+    t.integer  "king"
+    t.integer  "queen"
+    t.integer  "double_deck"
+    t.integer  "sofa_bed"
+    t.integer  "picnic_bed"
+    t.integer  "standard_bed"
+    t.integer  "max_guests"
     t.index ["user_id"], name: "index_rooms_on_user_id", using: :btree
   end
 

@@ -3,7 +3,7 @@
     <%= search_form_for @search, class: 'form-group', remote: true, url: host_calendar_path do |f| %>
       <div class="col-md-6 select">
         <div class="form-group">
-          <label>Your Listings</label>
+          <label>ที่พักของฉัน</label>
           <%= f.select :room_id, options_for_select(@rooms.collect {|u| [u.listing_name, u.id]}, params[:room_id]), {}, {
             onchange: "$(this.form).submit()",
             class: "form-control"

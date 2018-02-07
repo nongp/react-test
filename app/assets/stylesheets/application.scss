@@ -31,7 +31,7 @@ a {
 }
 
 .icon-white {
-  color: #eeeeee;
+  color: #ffffff;
 }
 
 .icon-green {
@@ -46,6 +46,18 @@ a {
 .navbar-default {
   color: #ffffff;
   background-color: #428bca;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar .navbar-special {
+  color: #615d63;
+}
+
+.caret {
+  color: #ffffff;
 }
 
 .navbar-default .navbar-brand {
@@ -173,6 +185,7 @@ a {
 
 .form-control {
   border-radius: 2px;
+  
   height: 4rem;
 }
 
@@ -324,9 +337,9 @@ a {
 }
 
 .form-control.datepicker {
-  color: #CFD7DF;
+  color: #615d63;
   background-color: white;
-  border: 0px solid #CFD7DF;
+  border-radius: 2px;
   text-align: center;
 }
 
@@ -406,7 +419,7 @@ a {
   background: white;
   box-sizing: border-box;
   font-weight: 400;
-  border: 1px solid #CFD7DF;
+  border: 1px solid #615d63;
   border-radius: 24px;
   color: #32315E;
   outline: none;
@@ -418,9 +431,9 @@ a {
   float: right;
 }
 
-.field::-webkit-input-placeholder { color: #CFD7DF; }
-.field::-moz-placeholder { color: #CFD7DF; }
-.field:-ms-input-placeholder { color: #CFD7DF; }
+.field::-webkit-input-placeholder { color: #615d63; }
+.field::-moz-placeholder { color: #615d63; }
+.field:-ms-input-placeholder { color: #615d63; }
 
 .field:focus,
 .field.StripeElement--focus {
