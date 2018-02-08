@@ -8,20 +8,15 @@ class Room < ApplicationRecord
   has_many :guest_reviews
   has_many :calendars
 
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode 
 
   validates :home_type, presence: true
   validates :room_type, presence: true
   validates :accommodate, presence: true
   validates :bed_room, presence: true
   validates :bath_room, presence: true
-  validates :queen, presence: false
-  validates :king, presence: false
-  validates :double_deck, presence: false
-  validates :standard_bed, presence: false
-  validates :sofa_bed, presence: false
-  validates :picnic_bed, presence: false
+
 
   def cover_photo(size)
     if self.photos.length > 0

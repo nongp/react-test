@@ -12,6 +12,9 @@ class RoomsController < ApplicationController
   end
 
   def create
+    if current_user.phone_verified
+    return redirect_to edit_profile_path, alert: "เราจำเป็นต้องยืนยันเบอร์โทรของคุณ กรุณาเพิ่มเบอร์ (มือถือ) ที่เราสามารถติดต่อคุณได้แล้วคลิ๊ก Verify"
+  end
     #if !current_user.is_active_host 
 
     #  return redirect_to payout_method_path, alert: "Please Connect to Stripe Express first."
@@ -60,9 +63,9 @@ class RoomsController < ApplicationController
     new_params = room_params.merge(active: true) if is_ready_room
 
     if @room.update(new_params)
-      flash[:notice] = "Saved..."
+      flash[:notice] = "กำลังบันทึก..."
     else
-      flash[:alert] = "Something went wrong..."
+      flash[:alert] = "มีข้อผิดพลาด..."
     end
     redirect_back(fallback_location: request.referer)
   end
@@ -106,7 +109,7 @@ class RoomsController < ApplicationController
     end
 
     def is_authorised
-      redirect_to root_path, alert: "You don't have permission" unless current_user.id == @room.user_id
+      redirect_to root_path, alert: "คุณไม่มีสิทธิ์ในการเข้าถึง" unless current_user.id == @room.user_id
     end
 
     def is_ready_room
@@ -114,6 +117,6 @@ class RoomsController < ApplicationController
     end
 
     def room_params
-      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant, :king, :queen, :double_deck, :standard_bed, :sofa_bed, :picnic_bed, :max_guests)
+      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :latitude, :longitude, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant, :king, :queen, :double_deck, :standard_bed, :sofa_bed, :picnic_bed, :max_guests)
     end
 end

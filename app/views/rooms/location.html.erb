@@ -6,7 +6,7 @@
     <div class="panel panel-default">
 
       <div class="panel-heading">
-        ที่ตั้ง
+        ที่อยู่
       </div>
 
       <div class="panel-body">
@@ -15,15 +15,33 @@
 
             <div class="row">
               <div class="form-group">
-                <label>ที่อยู่</label>
-                <%= f.text_field :address, placeholder: "ค้นหาที่อยู่อัตโนมัติ", class: "form-control", required: true, id: "autoaddress" %>
+                <label>1. ที่อยู่ (ใช้ภาษาไทยเท่านั้น)</label>
+                <%= f.text_field :address, placeholder: "กรุณาระบุบ้านเลขที่", class: "form-control", required: true %>
               </div>
             </div>
-
-            <div class="text-center">
-              <%= f.submit "Save", class: "btn btn-form" %>
-            </div>
-
+            <div class="row">
+              <div class="form-group">
+             <label>2. ระบุตำแหน่งที่พักบนแผนที่ </label>
+              <div id='map_canvas' style="width: 100%; height: 400px"></div>
+              <br/>
+               <div class="col-md-6">
+                <div class="form-group">
+                  <label for="latitude">Lat:</label>
+                  <%= f.text_field :latitude, class: "form-control", id: "LatitudeTextBox" %>
+                </div>
+              </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                  <label for="longitude">Lng:</label>
+                  <%= f.text_field :longitude, class: "form-control", id: "LongitudeTextBox" %>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="text-center">
+                  <%= f.submit "บันทึก", class: "btn btn-form" %>
+                </div>
+              </div>
           <% end %>
         </div>
       </div>
@@ -33,7 +51,48 @@
 </div>
 
 <script>
-  $(function() {
-    $("#autoaddress").geocomplete();
-  })
+var map;
+var marker;
+var latitudeTextBox = $("#LatitudeTextBox");
+var longitudeTextBox = $("#LongitudeTextBox");
+
+jQuery(document).ready(function () {
+    var centerLatlng = new google.maps.LatLng(13, 100);
+
+    var mapOptions = {
+        zoom: 10,
+        center: centerLatlng,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DEFAULT
+        },
+        navigationControl: true,
+        navigationControlOptions: {
+            style: google.maps.NavigationControlStyle.DEFAULT
+        }
+    };
+
+    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+    // Edit existing location so that we need to display
+
+    // Display default marker
+    marker = new google.maps.Marker({
+        draggable: true,
+        map: map,
+        position: centerLatlng
+    });
+
+    // After dragging, updates both Lat and Lng.
+    google.maps.event.addListener(marker, 'dragend', function () {
+        var curLatLng = marker.getPosition();
+        latitudeTextBox.val(curLatLng.lat());
+        longitudeTextBox.val(curLatLng.lng());
+    });
+
+    google.maps.event.trigger(marker, "click");
+});
+
 </script>

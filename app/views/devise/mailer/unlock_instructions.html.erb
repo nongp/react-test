@@ -1,7 +1,9 @@
-<p>Hello <%= @resource.email %>!</p>
+<p>สวัสดีค่ะ  <%= @resource.email %>!</p>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p>บัญชีของคุณถูกลอคชั่วคราวเนื่องจากความพยายามในการเข้าสู่ระบบหลายครั้ง ...แล้ว fail</p>
 
-<p>Click the link below to unlock your account:</p>
+<p>คลิ๊กที่ลิ้งค์ด้านล่างเพื่อปลดล็อคบัญชีคุณ:</p>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to 'ปลดล็อคบัญชีฉันเดี้ยวนี้', unlock_url(@resource, unlock_token: @token) %></p>
+
+<p>ทีมงาน StayNPlay</p>

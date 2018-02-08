@@ -6,11 +6,11 @@ class SettingsController < ApplicationController
   def update
     @setting = User.find(current_user.id).setting
     if @setting.update(setting_params)
-      flash[:notice] = "Saved..."
+      flash[:notice] = "กำลังบันทึก..."
     else
-      flash[:alert] = "Cannot save..."
+      flash[:alert] = "ไม่สามารถบันทึกได้..."
     end
-    render 'edit'
+    render 'แก้ไข'
   end
 
   private

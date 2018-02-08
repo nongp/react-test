@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
       @other = current_user == @conversation.sender ? @conversation.recipient : @conversation.sender
       @messages = @conversation.messages.order("created_at DESC")
     else
-      redirect_to conversations_path, alert: "You don't have permission to view this."
+      redirect_to conversations_path, alert: "เสียใจด้วย คุณไม่สามารถเข้าถึงข้อมูลนี้ได้"
     end
   end
 

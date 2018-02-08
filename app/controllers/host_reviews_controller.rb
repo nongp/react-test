@@ -21,13 +21,13 @@ class HostReviewsController < ApplicationController
       if @has_reviewed.nil?
           # Allow to review
           @host_review = current_user.host_reviews.create(host_review_params)
-          flash[:success] = "Review created..."
+          flash[:success] = "กำลังสร้างรีวิว..."
       else
           # Already reviewed
-          flash[:success] = "You already reviewed this Reservation"
+          flash[:success] = "คุณได้รีวิวไปแล้วนะ"
       end
     else
-      flash[:alert] = "Not found this reservation"
+      flash[:alert] = "ไม่พบการจองดังกล่าว"
     end
 
     redirect_back(fallback_location: request.referer)
@@ -37,7 +37,7 @@ class HostReviewsController < ApplicationController
     @host_review = Review.find(params[:id])
     @host_review.destroy
 
-    redirect_back(fallback_location: request.referer, notice: "Removed...!")
+    redirect_back(fallback_location: request.referer, notice: "ลบแล้ว...!")
   end
 
   private

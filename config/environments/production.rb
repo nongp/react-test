@@ -73,7 +73,7 @@ Rails.application.configure do
 
   config.action_cable.url = "wss://www.staynplay.club/cable"
 
-  config.action_mailer.default_url_options = { host: 'mg.staynplay.club' }
+  config.action_mailer.default_url_options = { host: 'staynplay.club' }
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
