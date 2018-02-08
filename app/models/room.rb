@@ -16,12 +16,12 @@ class Room < ApplicationRecord
   validates :accommodate, presence: true
   validates :bed_room, presence: true
   validates :bath_room, presence: true
-  validates :queen, presence: true
-  validates :king, presence: true
-  validates :double_deck, presence: true
-  validates :standard_bed, presence: true
-  validates :sofa_bed, presence: true
-  validates :picnic_bed, presence: true
+  validates :queen, presence: false
+  validates :king, presence: false
+  validates :double_deck, presence: false
+  validates :standard_bed, presence: false
+  validates :sofa_bed, presence: false
+  validates :picnic_bed, presence: false
 
   def cover_photo(size)
     if self.photos.length > 0

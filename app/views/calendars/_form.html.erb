@@ -30,9 +30,9 @@
             <div class="row new-pricing">
               <div class="col-md-10">
                 <div class="form-group">
-                  <div class="input-group">
-                    <span class="input-group-addon">$</span>
+                  <div class="input-group"> 
                     <%= f.text_field :price, class: "form-control", value: @room.price, required: true %>
+                    <span class="input-group-addon">บ.</span>
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
             </div>
 
             <div class="form-group">
-              <%= f.button "Save", type: :submit, class: "btn btn-success" %>
+              <%= f.button "บันทึก", type: :submit, class: "btn btn-success" %>
             </div>
         <% end %>
       </div>

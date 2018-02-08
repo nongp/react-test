@@ -12,7 +12,7 @@
           <div class="col-md-4 select">
             <div class="form-group">
               <label>ประเภทที่พัก</label>
-              <%= f.select :home_type,[["คอนโด", "Condo"], ["บ้านพักและพูลวิลล่า", "House"], ["โรงแรม", "Hotel"], ["รีสอร์ท", "Resort"], ["ห้องเช่า", "Guest House"]],
+              <%= f.select :home_type, [["คอนโด", "คอนโด"], ["พูลวิลล่า", "พูลวิลล่า"], ["บ้านพัก", "บ้านพัก"], ["โรงแรม", "โรงแรม"], ["รีสอร์ท", "รีสอร์ท"], ["เกสต์เฮาส์", "เกสต์เฮาส์"], ["ห้องเช่า/อาพาทเม้นท์", "ห้องเช่า/อาพาทเม้นท์"]],
                             id: "home_type", prompt: "กรุณาเลือก...", class: "form-control" %>
             </div>
           </div>
@@ -20,7 +20,7 @@
           <div class="col-md-4 select">
             <div class="form-group">
               <label>ประเภทห้องของที่พัก</label>
-              <%= f.select :room_type, [["บ้าน/อพาร์ทเมนท์ทั้งหลัง", "Entire"], ["ห้องส่วนตัว", "Private"], ["ห้องแบ่งเช่า", "Shared"]],
+              <%= f.select :room_type, [["ทั้งหลัง", "Entire"], ["ห้องส่วนตัว", "Private"], ["ห้องแบ่งเช่า", "Shared"]],
                             id: "room_type", prompt: "กรุณาเลือก...", class: "form-control" %>
             </div>
           </div>

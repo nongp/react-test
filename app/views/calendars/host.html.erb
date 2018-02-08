@@ -66,10 +66,10 @@
 
       <% if !@rooms.blank? %>
         if (dayInfo.length > 0) {
-          if (dayInfo[0].status == "Not_Available") {
+          if (dayInfo[0].status == "ไม่ว่าง") {
             cell.addClass('fc-past');
           } else {
-            cell.append('<span class="day-price">' + '$' + dayInfo[0].price + '</span>')
+            cell.append('<span class="day-price">' + dayInfo[0].price + 'บ.' + '</span>')
           }
         } else {
           cell.append('<span class="day-price">' + '$<%= @room.price %>' + '</span>')

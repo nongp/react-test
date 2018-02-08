@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     current_user.generate_pin
     current_user.send_pin
 
-    redirect_to edit_user_registration_path, notice: "Saved..."
+    redirect_to edit_user_registration_path, notice: "กำลังบันทึก..."
   rescue Exception => e
     redirect_to edit_user_registration_path, alert: "#{e.message}"
   end
@@ -26,9 +26,9 @@ class UsersController < ApplicationController
     current_user.verify_pin(params[:user][:pin])
 
     if current_user.phone_verified
-      flash[:notice] = "Your phone number is verified."
+      flash[:notice] = "เบอร์โทรของคุณได้ถูกยืนยันแล้ว"
     else
-      flash[:alert] = "Cannot verify your phone number."
+      flash[:alert] = "ไม่สามารถทำการยืนยับเบอร์โทรของคุณได้"
     end
 
     redirect_to edit_user_registration_path
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       if current_user.omise_id.blank?
         customer = Omise::Customer.create(
         email: current_user.email,
-        description: "Add Card",
+        description: "เพิ่มบัตร",
         card: params[:omise_token]
         )
         current_user.omise_id = customer.id
