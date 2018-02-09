@@ -101,11 +101,7 @@ Rails.application.configure do
        s3_region: 'ap-southeast-1'
      }
    }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> eb3797a306800488830e4a7b6f21bde7dfab00e6
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
