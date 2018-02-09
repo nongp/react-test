@@ -88,18 +88,18 @@ Rails.application.configure do
     password: '3f81f9067ee0716fe968ba28cdf0d201'
   }
 
-    config.paperclip_defaults = {
+     config.paperclip_defaults = {
      storage: :s3,
      path: ':class/:attachment/:id/:style/:filename',
-     s3_host_name: 's3.us-east-1.amazonaws.com',
+     s3_host_name: 's3.ap-southeast-1.amazonaws.com',
      s3_credentials: {
-       bucket: 'staynplay',
-       access_key_id: 'AKIAIKRMTXY2ZBRR77OQ',
-       secret_access_key: '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',
-       s3_region: 'us-east-1'
+       bucket: 'staynplayclub',
+       access_key_id: 'AKIAJBSPNCQ46ZPBAGFQ',
+       secret_access_key: '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',
+       s3_region: 'ap-southeast-1'
      }
-    }
-
+   }
+  
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
