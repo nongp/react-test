@@ -66,7 +66,7 @@ Rails.application.configure do
     password: '5d1fd00638901a64158cefa81d359600'
   }
 
-     config.paperclip_defaults = {
+      config.paperclip_defaults = {
      storage: :s3,
      path: ':class/:attachment/:id/:style/:filename',
      s3_host_name: 's3.ap-southeast-1.amazonaws.com',
