@@ -91,12 +91,12 @@ Rails.application.configure do
     config.paperclip_defaults = {
      storage: :s3,
      path: ':class/:attachment/:id/:style/:filename',
-     s3_host_name: 's3-ap-southeast-1.amazonaws.com',
+     s3_host_name: 's3.us-east-1.amazonaws.com',
      s3_credentials: {
        bucket: 'staynplay',
-       access_key_id: 'AKIAIWKVUG37CDA6JMBQ',
-       secret_access_key: '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',
-       s3_region: 'ap-southeast-1'
+       access_key_id: 'AKIAIKRMTXY2ZBRR77OQ',
+       secret_access_key: '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',
+       s3_region: 'us-east-1'
      }
     }
 
