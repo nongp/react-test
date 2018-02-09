@@ -90,7 +90,7 @@ Rails.application.configure do
     password: '3f81f9067ee0716fe968ba28cdf0d201'
   }
 
-    config.paperclip_defaults = {
+     config.paperclip_defaults = {
      storage: :s3,
      path: ':class/:attachment/:id/:style/:filename',
      s3_host_name: 's3.ap-southeast-1.amazonaws.com',
@@ -101,7 +101,11 @@ Rails.application.configure do
        s3_region: 'ap-southeast-1'
      }
    }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> eb3797a306800488830e4a7b6f21bde7dfab00e6
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
