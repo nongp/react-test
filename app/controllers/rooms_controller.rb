@@ -12,9 +12,10 @@ class RoomsController < ApplicationController
   end
 
   def create
-    if current_user.phone_verified
-    return redirect_to edit_profile_path, alert: "เราจำเป็นต้องยืนยันเบอร์โทรของคุณ กรุณาเพิ่มเบอร์ (มือถือ) ที่เราสามารถติดต่อคุณได้แล้วคลิ๊ก Verify"
-  end
+#    if current_user.phone_verified
+#    return redirect_to edit_profile_path, alert: "เราจำเป็นต้องยืนยันเบอร์โทรของคุณ กรุณาเพิ่มเบอร์ (มือถือ) ที่เราสามารถติดต่อคุณได้แล้วคลิ๊ก Verify"
+#  end
+
     #if !current_user.is_active_host 
 
     #  return redirect_to payout_method_path, alert: "Please Connect to Stripe Express first."
