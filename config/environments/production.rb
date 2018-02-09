@@ -38,7 +38,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
- config.action_cable.allowed_request_origins = [ 'http://www.staynplay.club', 'https://www.staynplay.club', 'http://murmuring-bastion-34979.herokuapp.com', 'https://murmuring-bastion-34979.herokuapp.com' ]
+ config.action_cable.allowed_request_origins = [ 'http://www.staynplay.club', 'https://www.staynplay.club' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -46,6 +46,8 @@ Rails.application.configure do
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
+
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -91,12 +93,12 @@ Rails.application.configure do
     config.paperclip_defaults = {
      storage: :s3,
      path: ':class/:attachment/:id/:style/:filename',
-     s3_host_name: 's3-ap-southeast-1.amazonaws.com',
+     s3_host_name: 's3://bucketeer-3100bbce-a7f6-42e1-a6c9-ba0c3029887f',
      s3_credentials: {
-       bucket: 'staynplay',
-       access_key_id: 'AKIAIWKVUG37CDA6JMBQ',
-       secret_access_key: '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',
-       s3_region: 'ap-southeast-1'
+       bucket: 'bucketeer-3100bbce-a7f6-42e1-a6c9-ba0c3029887f',
+       access_key_id: 'AKIAJLNUI3RHDOLFYZ2Q',
+       secret_access_key: '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',
+       s3_region: 'us-east-1'
      }
     }
 
