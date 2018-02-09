@@ -66,15 +66,15 @@ Rails.application.configure do
     password: '5d1fd00638901a64158cefa81d359600'
   }
 
-     config.paperclip_defaults = {
+      config.paperclip_defaults = {
      storage: :s3,
      path: ':class/:attachment/:id/:style/:filename',
-     s3_host_name: 'bucketeer-3100bbce-a7f6-42e1-a6c9-ba0c3029887f.s3.amazonaws.com',
+     s3_host_name: 's3.ap-southeast-1.amazonaws.com',
      s3_credentials: {
-       bucket: 'bucketeer-3100bbce-a7f6-42e1-a6c9-ba0c3029887f',
-       access_key_id: 'AKIAJLNUI3RHDOLFYZ2Q',
-       secret_access_key: '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',
-       s3_region: 'us-east-1'
+       bucket: 'staynplayclub',
+       access_key_id: 'AKIAJBSPNCQ46ZPBAGFQ',
+       secret_access_key: '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',
+       s3_region: 'ap-southeast-1'
      }
    }
 end
