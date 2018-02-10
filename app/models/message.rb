@@ -14,10 +14,10 @@ class Message < ApplicationRecord
     def create_notification
       if self.conversation.sender_id == self.user_id
         sender = User.find(self.conversation.sender_id)
-        Notification.create(content: "คุณมีข้อความใหม่จาก #{sender.fullname} <a href="https://www.staynplay.club/conversations">ไปที่กล่องข้อความ</a>", user_id: self.conversation.recipient_id)
+        Notification.create(content: "คุณมีข้อความใหม่จาก #{sender.fullname} ดูเพิ่มที่กล่องข้อความ", user_id: self.conversation.recipient_id)
       else
         sender = User.find(self.conversation.recipient_id)
-        Notification.create(content: "คุณมีข้อความใหม่จาก #{sender.fullname} <a href="https://www.staynplay.club/conversations">ไปที่กล่องข้อความ</a>", user_id: self.conversation.sender_id)
+        Notification.create(content: "คุณมีข้อความใหม่จาก #{sender.fullname} ดูเพิ่มที่กล่องข้อความ", user_id: self.conversation.sender_id)
       end
     end
 end
