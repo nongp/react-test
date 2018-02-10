@@ -7,6 +7,9 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render 'shared/devisemes' %>
 
+      <%= link_to "ลงชื่อเข้าใช้ด้วย Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" %>
+    <hr/>
+    
       <div class="form-group">
         <%= f.text_field :fullname, autofocus: true, placeholder: "ชื่อ - สกุล", class: "form-control" %>
       </div>
@@ -24,7 +27,5 @@
       </div>
     <% end %>
 
-    <hr/>
-    <%= link_to "ลงชื่อเข้าใช้ด้วย Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" %>
   </div>
 </div>

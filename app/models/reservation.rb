@@ -15,9 +15,9 @@ class Reservation < ApplicationRecord
   private
 
     def create_notification
-      type = self.room.Instant? ? "New Booking" : "New Request"
+      type = self.room.Instant? ? "มี Book ใหม่!" : "มี Request ใหม่!"
       guest = User.find(self.user_id)
 
-      Notification.create(content: "#{type} from #{guest.fullname}", user_id: self.room.user_id)
+      Notification.create(content: "#{type} จาก #{guest.fullname} ดูรายละเอียดที่ <a href="https://www.staynplay.club/your_reservations">My Bookings</a>", user_id: self.room.user_id)
     end
 end
