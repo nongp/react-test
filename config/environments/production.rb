@@ -75,7 +75,7 @@ Rails.application.configure do
 
   config.action_cable.url = "wss://www.staynplay.club/cable"
 
-  config.action_mailer.default_url_options = { host: 'staynplay.club' }
+  config.action_mailer.default_url_options = { host: 'www.staynplay.club' }
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
@@ -95,10 +95,10 @@ Rails.application.configure do
      path: ':class/:attachment/:id/:style/:filename',
      s3_host_name: 's3.ap-southeast-1.amazonaws.com',
      s3_credentials: {
-       bucket: 'staynplayclub',
-       access_key_id: 'AKIAJBSPNCQ46ZPBAGFQ',
-       secret_access_key: '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',
-       s3_region: 'ap-southeast-1'
+       bucket: ENV['AWS_S3_BUCKET'],
+       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+       s3_region: ENV['AWS_S3_BUCKET']
      }
    }
 

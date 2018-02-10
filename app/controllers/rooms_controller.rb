@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = current_user.rooms
+
   end
 
   def new
@@ -28,10 +29,6 @@ class RoomsController < ApplicationController
       flash[:alert] = "มีบางอย่างผิดพลาด..."
       render :new
     end
-  end
-
-  def max_guests
-    @max_guests = @room.max_guests
   end
 
   def show

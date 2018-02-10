@@ -11,6 +11,18 @@
 
       <div class="panel-body">
         <div class="container">
+
+      <%= simple_form_for @room do |f| %>
+        <%= f.input :listing_name %>
+        <%= f.input :price %>
+        <%= f.input :instant, hint: "5% สำหรับ Yes 10% สำหรับ No", as: :check_boxes %>
+        <%= f.input :summary %>
+        <%= f.input :king, collection: 1..9 %>
+        <%= f.button :submit %>
+  <% end %>
+
+
+
           <%= form_for @room do |f| %>
 
             <div class="row">
@@ -35,32 +47,32 @@
             <div class="row">
               <div class="col-xs-6">   
                 <label>เตียงขนาด 6 ฟุต:</label>
-                <%= f.select :king, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "king", prompt: "กรุณาเลือก...", class: "form-control" %>
+                <%= f.select :king, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "king", prompt: "กรุณาเลือก...", class: "form-control", type: "bed_type" %>
               </div>
               <div class="col-xs-6">
                 <label>ที่นอนโซฟา:</label>
-                <%= f.select :sofa_bed, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "sofa_bed", prompt: "กรุณาเลือก...", class: "form-control" %>
+                <%= f.select :sofa_bed, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "sofa_bed", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
               </div>
             </div>
 
             <div class="row">
               <div class="col-xs-6">
                 <label>เตียงขนาด 5 ฟุต:</label>
-                <%= f.select :queen, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "queen", prompt: "กรุณาเลือก...", class: "form-control" %>
+                <%= f.select :queen, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "queen", prompt: "กรุณาเลือก...", class: "form-control", type: "bed_type" %>
               </div>
               <div class="col-xs-6" >
                 <label>เตียงสองชั้น:</label>
-                  <%= f.select :double_deck, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "double_deck", prompt: "กรุณาเลือก...", class: "form-control" %>
+                  <%= f.select :double_deck, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "double_deck", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-6" >
                 <label>เตียงขนาด 3.5 ฟุต:</label>
-                <%= f.select :standard_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "standard_bed", prompt: "กรุณาเลือก...", class: "form-control" %>
+                <%= f.select :standard_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "standard_bed", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
               </div>
               <div class="col-xs-6">
                 <label>ที่นอนปิคนิค:</label>
-                <%= f.select :picnic_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "picnic_bed", prompt: "กรุณาเลือก...", class: "form-control" %>
+                <%= f.select :picnic_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "picnic_bed", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
               </div>
           </div>
         <br/>

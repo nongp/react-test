@@ -8,9 +8,19 @@
       <div class="panel-heading">
         ราคา
       </div>
-
       <div class="panel-body">
         <div class="container">
+
+      <%= simple_form_for @room do |f| %>
+        <%= f.input :instant %>
+        <%= f.input :price %>
+        <%= f.input :instant %>
+        <%= f.input :instant %>
+        <%= f.input :instant %>
+        <%= f.input :instant %>
+       <%= f.button :submit %>
+  <% end %>
+
           <%= form_for @room do |f| %>
 
             <div class="row">

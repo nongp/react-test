@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'web-console', '>= 3.3.0'
+  gem 'derailed'
+  gem 'stackprof'
 end
 
 gem 'listen', '~> 3.0.5'
@@ -60,6 +62,8 @@ gem 'omise'
 gem 'pg', '~> 0.18'
 
 gem 'gmaps4rails'
+
+gem 'simple_form'
 
 group :production do
   gem 'rails_12factor'
