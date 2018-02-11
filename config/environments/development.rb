@@ -71,10 +71,10 @@ Rails.application.configure do
      path: ':class/:attachment/:id/:style/:filename',
      s3_host_name: 's3.ap-southeast-1.amazonaws.com',
      s3_credentials: {
-       bucket: ENV.fetch('AWS_S3_BUCKET'),
-       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-       s3_region: ENV.fetch('AWS_S3_REGION')
+       bucket: ENV['AWS_S3_BUCKET'],
+       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+       s3_region: ENV['AWS_S3_REGION']
      }
    }
 end
