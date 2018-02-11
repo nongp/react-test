@@ -18,6 +18,6 @@ class Reservation < ApplicationRecord
       type = self.room.Instant? ? "มี Book ใหม่!" : "มี Request ใหม่!"
       guest = User.find(self.user_id)
 
-      Notification.create(content: "#{type} จาก #{guest.fullname} ดูรายละเอียดที่'Guest Arrival'", user_id: self.room.user_id)
+      Notification.create(content: "#{type} จาก #{guest.fullname}", user_id: self.room.user_id)
     end
 end
