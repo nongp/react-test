@@ -63,6 +63,8 @@ gem 'gmaps4rails'
 
 gem 'simple_form'
 
+gem 'foundation-rails'
+
 group :production do
   gem 'rails_12factor'
   gem 'redis', '~> 3.2'

@@ -72,7 +72,7 @@
             cell.append('<span class="day-price">' + dayInfo[0].price + 'บ.' + '</span>')
           }
         } else {
-          cell.append('<span class="day-price">' + '$<%= @room.price %>' + '</span>')
+          cell.append('<span class="day-price">' + '<%= @room.price %> บ.' + '</span>')
         }
       <% end %>
 

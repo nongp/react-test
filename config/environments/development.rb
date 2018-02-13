@@ -14,7 +14,7 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
-    config.action_controller.perform_caching = true
+    config.action_controller.perform_caching = false
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -66,15 +66,18 @@ Rails.application.configure do
     password: '5d1fd00638901a64158cefa81d359600'
   }
 
-#    config.paperclip_defaults = {
-#  :storage => :s3,
-#  :bucket => ENV['AWS_BUCKET'],
-#  :s3_credentials => {    
+  config.paperclip_defaults = {
+     storage: :s3,
+     path: ':class/:attachment/:id/:style/:filename',
+     s3_host_name: 's3-ap-southeast-2.amazonaws.com',
+     s3_region: 'ap-southeast-2',
+     s3_credentials: {
+      :bucket => 'staynlayclub',
+      :s3_credentials => '#{Rails.root}/config/aws.yml'
 #    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
 #    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
-#    s3_region: ENV['AWS_S3_REGION']
 
-#  }
-#}
+  }
+}
 
 end

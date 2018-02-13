@@ -156,7 +156,7 @@
         specialDates = data.special_dates;
 
         $.each(data.reservations, function(arrID, arrValue) {
-            for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate() + 1)) {
+            d = new Date(arrValue.start_date); d  for(var<= new Date(arrValue.end_date); d.setDate(d.getDate() + 1)) {
               unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
             }
         });
@@ -167,6 +167,7 @@
 
 
         $('#reservation_start_date').datepicker({
+          numberOfMonths: 2,
           dateFormat: 'dd-mm-yy',
           minDate: 0,
           maxDate: '3m',
@@ -179,6 +180,7 @@
         });
 
         $('#reservation_end_date').datepicker({
+          numberOfMonths: 2,
           dateFormat: 'dd-mm-yy',
           minDate: 0,
           maxDate: '3m',

@@ -8,22 +8,10 @@
       <div class="panel-heading">
         รายละเอียดที่พัก
       </div>
-
       <div class="panel-body">
         <div class="container">
 
-      <%= simple_form_for @room do |f| %>
-        <%= f.input :listing_name %>
-        <%= f.input :price %>
-        <%= f.input :instant, hint: "5% สำหรับ Yes 10% สำหรับ No", as: :check_boxes %>
-        <%= f.input :summary %>
-        <%= f.input :king, collection: 1..9 %>
-        <%= f.button :submit %>
-  <% end %>
-
-
-
-          <%= form_for @room do |f| %>
+        <%= form_for @room do |f| %>
 
             <div class="row">
               <div class="form-group">
@@ -39,11 +27,19 @@
               </div>
             </div>
             <hr/>
-             <div class="row">
-                  <h4>ที่พักของคุณมีเตียงประเภทใดบ้าง?  -- ที่พักของคุณสามารถรองรับได้ไม่เกิน <b><span id="sum">0</span></b> ท่าน</h4>
+             <div class="col-md-7">
+                  <h3>ที่พักของคุณมีเตียงประเภทใดบ้าง?</h3></div>
+              <div class="col-xs-2" >
+               
+                
+                <span id="sum" class="form-control">0</span>ท่าน(สูงสุด)
+                
+                
                 </div>
               <br/>
+              <br/>
 
+            <div class="row">
             <div class="row">
               <div class="col-xs-6">   
                 <label>เตียงขนาด 6 ฟุต:</label>
@@ -74,6 +70,7 @@
                 <label>ที่นอนปิคนิค:</label>
                 <%= f.select :picnic_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "picnic_bed", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
               </div>
+              </div>
           </div>
         <br/>
         <br/>
@@ -90,6 +87,6 @@ $("select").change(function() {
     $("select").each(function() {
         combined += parseInt(this.value);
     });
-    $("#sum").html(combined);
+    $("#sum").text(combined);
 }).trigger("change");
 </script>

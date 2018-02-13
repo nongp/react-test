@@ -565,3 +565,45 @@ li {
 #current {
     padding-top: 25px;
 }
+
+body {
+    background-color: seashell;
+    font-family: sans-serif;
+}
+main {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.2em;
+}
+p {
+    margin: 0.15em;
+}
+h1 {
+    font-size: larger;
+}
+input:not([type="submit"]) {
+    width: 15em;
+}
+input {
+    max-width: 95%;
+}
+label {
+    margin-right: 0.5em;
+}
+.right {
+    float: right;
+}
+input.right {
+    margin-top: 3px;
+}
+.justify {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex {
+    display: flex;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
