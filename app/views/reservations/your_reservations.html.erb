@@ -16,7 +16,7 @@
         <% @rooms.each do |room| %>
             <% room.reservations.each do |reservation| %>
                 <div class="row">
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     <%= reservation.start_date.strftime('%v') %>
                     <p><%= reservation.status %></p>
                     <div class="form-inline">
@@ -31,7 +31,7 @@
                         <%= image_tag reservation.room.cover_photo(:thumb) %>
                     <% end %>
                   </div>
-                  <div class="col-md-5">
+                  <div class="col-md-4">
                     <%= link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
                     <span>
                       <%= link_to user_path(reservation.user) do %>

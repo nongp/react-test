@@ -27,7 +27,7 @@
   function showReservations(data) {
     return data.map(function (e) {
       if (e['start_date'] !== e['end_date']) {
-        e['end_date'] = moment.utc(e['end_date']).add(1, 'days')
+          e['end_date'] = moment.utc(e['end_date']).add(1, 'days') // original e['end_date'] = moment.utc(e['end_date']).add(1, 'days')
       }
 
       return {
@@ -40,13 +40,17 @@
     })
   }
 
-  $('#calendar').fullCalendar({
+    
+ $('#calendar').fullCalendar({
+   schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',//ระบุ license ว่าเราใช้งาน license ประเภทใด
+    aspectRatio: 2,
     header: {
-      left: 'title',
-      center: '',
-      right: 'prev,next'
+      left: 'today prev,next',
+      center: 'title',
+      right: 'timelineWeek,month,listWeek'
     },
     defaultDate: $('#start-date').val(),
+
     events: showReservations(reservations),
     eventRender: function(event, element, view) {
       return $(`
@@ -61,12 +65,12 @@
       var dayInfo = $.grep(days, function(e) {
         return e.day === date.format();
       });
-
-      console.log(dayInfo);
+      
+       console.log(dayInfo);
 
       <% if !@rooms.blank? %>
         if (dayInfo.length > 0) {
-          if (dayInfo[0].status == "ไม่ว่าง") {
+          if (dayInfo[0].status == "Not_Available") {
             cell.addClass('fc-past');
           } else {
             cell.append('<span class="day-price">' + dayInfo[0].price + 'บ.' + '</span>')
@@ -81,7 +85,8 @@
     selectable: true,
     select: function(start, end, jsEvent, view) {
       var start_date = moment(start);
-      var end_date = moment(end).subtract(1, "days");
+      var end_date = moment(end).subtract(1, "days");  //original var end_date = moment(end).subtract(1, "days");
+     
 
       <% if @rooms.blank? %>
           $('#calendar').fullCalendar('unselect');
@@ -89,7 +94,7 @@
 
       var overlap = reservations.filter(function(e) {
         var r_start_date = moment(e.start_date);
-        var r_end_date = moment(e.end_date).subtract(1, "days");
+        var r_end_date = moment(e.end_date).subtract(1, "days");  // original var r_end_date = moment(e.end_date).subtract(1, "days");
 
         return (r_start_date.isSameOrBefore(end_date) && r_end_date.isSameOrAfter(start_date))
       }).length > 0;
@@ -130,3 +135,5 @@
 
 
 </script>
+
+

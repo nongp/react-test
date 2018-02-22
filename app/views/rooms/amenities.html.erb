@@ -15,22 +15,61 @@
 
               <div class="row form-group">
                 <div class="col-md-4">
-                  <%= f.check_box :is_tv %> ทีวี
+                 <%= f.check_box :is_kitchen %> ห้องครัวและอุปกรณ์ทำอาหาร 
                 </div>
                 <div class="col-md-4">
-                  <%= f.check_box :is_kitchen %> ห้องครัว
+                 <%= f.check_box :is_internet %> Internet/Wifi
                 </div>
                 <div class="col-md-4">
-                  <%= f.check_box :is_internet %> WiFi
+                  <%= f.check_box :is_tv %> เคเบิ้ลทีวี 
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-4">
-                  <%= f.check_box :is_heating %> เครื่องทำน้ำอุ่น
+                  <%= f.check_box :is_bbq %> เตาและอุปกรณ์ปิ้งย่าง
                 </div>
                 <div class="col-md-4">
-                  <%= f.check_box :is_air %> เครื่องปรับอากาศ
+                  <%= f.check_box :is_karaoke%> คาราโอเกะ
+                </div>
+                <div class="col-md-4">
+                  <%= f.check_box :is_heating %> เครื่องทำน้ำอุ่น
+                </div>
+              </div>
+
+               <div class="row form-group">
+                <div class="col-md-4">
+                  <%= f.check_box :is_parking %> ที่จอดรถ
+                </div>
+                <div class="col-md-4">
+                  <%= f.check_box :is_meeting_room %> ห้องประชุม
+                </div>
+                <div class="col-md-4">
+                  <%= f.check_box :is_pet_friendly %> สัตว์เลี้ยงเข้าพักได้
+                </div>
+              </div>
+
+               <div class="row form-group">
+                <div class="col-md-4">
+                  <%= f.check_box :is_pool_table %> โต๊พูล
+                </div>
+                <div class="col-md-4">
+                  <%= f.check_box :is_private_pool %> สระว่ายน้ำ ส่วนตัว
+                </div>
+                <div class="col-md-4">
+                  <%= f.check_box :is_public_pool %> สระว่ายน้ำ ส่วนกลาง
+                </div>
+              </div>
+
+                <div class="row form-group">
+                <div class="col-md-4">
+                  <%= f.check_box :is_breakfast %> อาหารเช้า
+                </div>
+                <div class="col-md-4">
+                  <%= f.text_field :suggest_ammenities, placeholder: "อื่นๆ โปรดระบุ", class: "form-control" %>
+                </div>
+                <div class="col-md-4">
+                
                 </div>
               </div>
               <br/><br/>

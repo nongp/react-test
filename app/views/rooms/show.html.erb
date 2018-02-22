@@ -43,9 +43,9 @@
 
       <div class="row text-center">
         <div class="col-md-3"><%= @room.home_type %></div>
-        <div class="col-md-3"><%= pluralize(@room.accommodate, "Guest") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
+        <div class="col-md-3">สำหรับ <%=@room.max_guests %> ท่าน</div>
+        <div class="col-md-3"><%= @room.bed_room %> ห้องนอน</div>
+        <div class="col-md-3"><%= @room.bath_room %> ห้องน้ำ</div>
       </div>
 
     </div>
@@ -70,18 +70,28 @@
         <div class="row">
           <div class="col-md-6">
             <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_tv %>">ทีวี</li>
-              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">ห้องครัว</li>
-              <li class="<%= 'text-line-through' if !@room.is_internet %>">WiFi</li>
+              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">ห้องครัวและอุปกรณ์ทำอาหาร</li>
+              <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet/Wifi</li>
+              <li class="<%= 'text-line-through' if !@room.is_tv %>">เคเบิ้ลทีวี </li>
+               <li class="<%= 'text-line-through' if !@room.is_parking %>">ที่จอดรถ</li>
+              <li class="<%= 'text-line-through' if !@room.is_pet_friendly %>">สัตว์เลี้ยงเข้าพักได้</li>
+              <li class="<%= 'text-line-through' if !@room.is_towel %>">ผ้าขนหนู</li>               
+                <li class="<%= 'text-line-through' if !@room.is_breakfast%>">อาหารเช้า</li>
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="amenities">
+              <li class="<%= 'text-line-through' if !@room.is_bbq %>">เตาและอุปกรณ์ปิ้งย่าง</li>
+              <li class="<%= 'text-line-through' if !@room.is_karaoke %>">คาราโอเกะ</li>
               <li class="<%= 'text-line-through' if !@room.is_heating %>">เครื่องทำน้ำอุ่น</li>
-              <li class="<%= 'text-line-through' if !@room.is_air %>">เครื่องปรับอากาศ</li>
+              <li class="<%= 'text-line-through' if !@room.is_pool_table  %>">โต๊พูล</li>
+              <li class="<%= 'text-line-through' if !@room.is_private_pool %>">สระว่ายน้ำ ส่วนตัว</li>
+              <li class="<%= 'text-line-through' if !@room.is_public_pool %>">สระว่ายน้ำ ส่วนกลาง</li>
+              <li class="<%= 'text-line-through' if !@room.is_meeting_room%>">ห้องประชุม</li>
             </ul>
           </div>
 
+         
         </div>
       </div>
 
@@ -144,7 +154,7 @@
 
       <div id="map" style="width: 100%; height: 400px"></div>
 
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBir_sMZTVXPjLCxc9dHYdj9PSAk3bQMM&libraries=places"></script>
+    <!--   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBir_sMZTVXPjLCxc9dHYdj9PSAk3bQMM&libraries=places"></script> -->
       <script>
           function initialize() {
             var location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
@@ -173,7 +183,7 @@
 
     <!-- NEAR BY ROOMS -->
     <div class="row">
-      <h3>ที่พักอื่นๆ แถวนี้</h3>
+      <h3>ที่พักอื่นๆ บริเวณนี้</h3>
       <% for room in @room.nearbys(10) %>
           <div class="col-md-4">
             <div class="panel panel-default">
@@ -182,7 +192,7 @@
               </div>
               <div class="panel-body">
                 <%= link_to room.listing_name, room %><br/>
-                (<%= room.distance.round(2) %> ก.ม.)
+                (ห่างออกไป <%= room.distance.round(2) %> ก.ม.)
               </div>
             </div>
           </div>

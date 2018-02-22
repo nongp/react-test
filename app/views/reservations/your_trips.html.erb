@@ -9,13 +9,13 @@
   <div class="col-md-9">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Your Trips
+        ทริปของฉัน
       </div>
       <div class="panel-body">
 
         <% @trips.each do |trip| %>
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
               <%= trip.start_date.strftime('%v') %>
               <p><%= trip.status %></p>
             </div>
@@ -24,7 +24,7 @@
                 <%= image_tag trip.room.cover_photo(:thumb) %>
               <% end %>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
               <%= link_to trip.room.listing_name, room_path(trip.room) %><br/><br/>
               <span>
                 <%= image_tag avatar_url(trip.room.user), class: "img-circle avatar-small" %>

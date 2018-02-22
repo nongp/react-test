@@ -12,15 +12,42 @@
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
-     <script src="//maps.google.com/maps/api/js?key=AIzaSyBBir_sMZTVXPjLCxc9dHYdj9PSAk3bQMM"></script>
+    <!--  <script src="//maps.google.com/maps/api/js?key=AIzaSyBBir_sMZTVXPjLCxc9dHYdj9PSAk3bQMM"></script> -->
 
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/hot-sneaks/jquery-ui.css">
+
+ <link href='https://fullcalendar.io/js/fullcalendar-scheduler-1.7.1/lib/fullcalendar.min.css' rel='stylesheet' />
+<link href='https://fullcalendar.io/js/fullcalendar-scheduler-1.7.1/lib/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<link href='https://fullcalendar.io/js/fullcalendar-scheduler-1.7.1/scheduler.min.css' rel='stylesheet' />
+
+<script src='https://fullcalendar.io/js/fullcalendar-scheduler-1.7.1/lib/moment.min.js'></script>
+<script src='https://fullcalendar.io/js/fullcalendar-scheduler-1.7.1/lib/jquery.min.js'></script>
+<script src='https://fullcalendar.io/js/fullcalendar-scheduler-1.7.1/lib/fullcalendar.min.js'></script>
+<script src='https://fullcalendar.io/js/fullcalendar-scheduler-1.7.1/scheduler.min.js'></script>
+
+<style>
+ 
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+    }
+ 
+    #calendar {
+        max-width: 900px;
+        margin: 50px auto;
+    }
+ 
+</style>
+
   </head>
 
-  <body>
 
+
+  <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/message' %>
 
@@ -31,6 +58,8 @@
     <div class="container">
       <%= yield %>
     </div>
-
   </body>
+
+
+
 </html>

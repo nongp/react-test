@@ -40,15 +40,18 @@ class RoomsController < ApplicationController
   def listing
   end
 
+  def is_bbq
+  end
+
   def pricing
   end
 
   def description
   end
 
-  def photo_upload
-    @photos = @room.photos
-  end
+  # def photo_upload
+  #   @photos = @room.photos
+  # end
 
   def amenities
   end
@@ -116,6 +119,6 @@ class RoomsController < ApplicationController
     end
 
     def room_params
-      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :latitude, :longitude, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant, :king, :queen, :double_deck, :standard_bed, :sofa_bed, :picnic_bed, :max_guests)
+      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :latitude, :longitude, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant, :king, :queen, :double_deck, :standard_bed, :sofa_bed, :picnic_bed, :max_guests, :security_deposit, :min_night, :max_night, :extra_guest_fee, :percent_extra_guest_fee, :min_guests, :is_karaoke, :is_parking, :is_bbq, :is_pet_friendly, :is_towel, :is_pool_table, :is_private_pool, :is_public_pool, :is_meeting_room, :is_breakfast )
     end
 end

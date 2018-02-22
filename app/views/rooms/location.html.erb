@@ -15,13 +15,13 @@
 
             <div class="row">
               <div class="form-group">
-                <label>1. ที่อยู่ (ใช้ภาษาไทยเท่านั้น)</label>
+                <label>1. ที่อยู่ บ้านเลขที่ (ใช้ภาษาไทยเท่านั้น)</label>
                 <%= f.text_field :address, placeholder: "กรุณาระบุบ้านเลขที่", class: "form-control", required: true %>
               </div>
             </div>
             <div class="row">
               <div class="form-group">
-             <label>2. ระบุตำแหน่งที่พักบนแผนที่ </label>
+             <label>2. ลาก marker เพื่อระบุตำแหน่งที่พักบนแผนที่ </label>
               <div id='map_canvas' style="width: 100%; height: 400px"></div>
               <br/>
                <div class="col-md-6">

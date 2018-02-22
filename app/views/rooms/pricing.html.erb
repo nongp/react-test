@@ -11,28 +11,101 @@
       <div class="panel-body">
         <div class="container">
 
-      <%= simple_form_for @room do |f| %>
-        <%= f.input :instant %>
-        <%= f.input :price %>
-        <%= f.input :instant %>
-        <%= f.input :instant %>
-        <%= f.input :instant %>
-        <%= f.input :instant %>
-       <%= f.button :submit %>
-  <% end %>
-
           <%= form_for @room do |f| %>
 
-            <div class="row">
-              <div class="col-md-3">
+          
+            <p class="mb-0">แนะนำให้ใช้การตั้งราคาสูงสุด (ราคาสำหรับการรองรับผู้เข้าพักเต็มอัตรา) แล้วค่อยให้ระบบปรับลดราคาลงมาตามจำนวนของผู้เข้าพักจริง (Decrement Pricing) ท่านยังสามารถปรับราคาได้บนหน้าปฎิทิน โดยราคาที่ท่านตั้งบนปฎิทินจะถูกนำไปใช้ก่อน (override) ราคาบนหน้านี้</p>
+          
+          <div class="row">
+           <div class="col-md-4">
+            <div class="form-group">
                 <label>ราคา</label>
-                <%= f.text_field :price, placeholder: "เช่น: 1500", class: "form-control", required: true %>
+               <%= f.text_field :price, placeholder: "6900", class: "form-control", required: true %>
               </div>
-            <div class="text-center">
-              <%= f.submit "บันทึก", class: "btn btn-form" %>
+              </div>
+
+               <div class="col-md-4">
+                  <div class="form-group">
+                    <label>สามารถเข้าพักได้:</label>
+                    <span class="form-control" id="disabledTextInput"><%= @room.max_guests %></span>
+                  </div>
+                </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>ส่วนลดต่อคน หากมาไม่ถึง <%= @room.max_guests %> คน:</label>
+                    <%= f.text_field :extra_guest_fee, placeholder: "-300", class: "form-control", required: true %>
+                </div>
+              </div>     
+          </div>
+
+           <div class="row">
+            <!--  <div class="col-md-4 select">
+            <div class="form-group">
+            <label>จำนวนคืนขั้นต่ำ:</label>
+                <%= f.select :min_night, [["1 คืน", 1], ["2 คืน", 2], ["3 คืน", 3], ["4 คืน", 4], ["5 คืน", 5], ["6 คืน", 6], ["1 สัปดาห์", 7], ["2 สัปดาห์", 14], ["1 เดือน", 30]], prompt: "กรุณาเลือก...", class: "form-control" , required: false%>
+              </div>
+            </div> -->
+          
+           <div class="col-md-4 select">
+            <div class="form-group">
+              <label>เข้าพักอย่างน้อย:</label>
+              <%= f.select :min_guests, [["2 ท่าน", 2], ["3 ท่าน", 3], ["4 ท่าน", 4], ["5 ท่าน", 5], ["6 ท่าน", 6], ["7 ท่าน", 7], ["8 ท่าน", 8], ["9 ท่าน", 9], ["10 ท่าน", 10], ["11 ท่าน", 11], ["12 ท่าน", 12], ["13 ท่าน", 13], ["14 ท่าน", 14],["15+", 15]], prompt: "กรุณาเลือก...", class: "form-control", required: true %>       
+              </div>
             </div>
 
-          <% end %>
+            <div class="col-md-4">
+              <div class="form-group">
+               <label>ค่าประกัน:</label>
+                <%= f.text_field :security_deposit, placeholder: "2000", class: "form-control", required: true %>
+              </div>
+            </div>
+
+
+             <div class="col-md-4">
+              <div class="form-group">
+               
+               
+              </div>
+            </div>
+          </div>
+
+            <div class="row">
+              <div class="text-center">
+              <%= f.submit "บันทึก", class: "btn btn-form" %>
+              </div>
+            </div>       
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        คอมมิชชั่น
+      </div>
+      <div class="panel-body">
+        <div class="container">
+        <%= form_for @room do |f| %>
+
+           <p class="mb-0">ผู้ให้บริการโรงแรม ผู้ค้าส่งโรงแรม เจ้าของที่พัก และตัวแทนการท่องเที่ยว จะเป็นผู้รับผิดชอบในการชำระค่าธรรมเนียมการแนะนำ 10% ให้กับ StaynPlay.club สำหรับการสำรองห้องพักที่เกิดขึ้นจริงบนระบบหรืออาจเลือกที่จะเพิ่มค่าธรรมเนียมการอ้างอิงให้กับ StaynPlay.club 
+
+            ผู้ให้บริการโรงแรม ผู้ค้าส่งโรงแรม เจ้าของที่พัก และตัวแทนการท่องเที่ยวมีหน้าที่ในการชำระค่าคอมมิชชั่นดังกล่าวหลังจากลูกค้าได้ทำการเช็คเอาท์ </p>
+
+          <div class="col-md-4 center select">
+            <div class="form-group">
+              <label>% คอมมิชชั่น</label>
+              <%= f.select :bed_room, [["10%", 0.10], ["11%", 0.11], ["12%", 0.12], ["13%", 0.13], ["14%", 0.14], ["15%", 0.15], ["16%", 0.16], ["17%", 0.17], ["18%", 0.18]], id: "commission", prompt: "10% คือค่าเริ่มต้น", class: "form-control", required: false %>
+            </div>
+          
+           <div class="row">
+            <div class="text-center">
+              <%= f.submit "บันทึก", class: "btn btn-form" %>
+              <% end %>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -6,14 +6,14 @@ class ReservationsController < ApplicationController
     room = Room.find(params[:room_id])
 
     if current_user == room.user
-      flash[:alert] = "คุณไม่สามารถจองบ้านตัวเองได้ค่ะ!"
+      flash[:alert] = "คุณไม่สามารถจองที่พักของคุณเองได้ค่ะ!"
     elsif current_user.omise_id.blank?
       flash[:alert] = "กรุณาอัพเดทวิธีการชำระเงิน"
       return redirect_to payment_method_path
     else
       start_date = Date.parse(reservation_params[:start_date])
       end_date = Date.parse(reservation_params[:end_date])
-      days = (end_date - start_date).to_i + 1
+      days = (end_date - start_date).to_i + 1 # original days = (end_date - start_date).to_i + 1
 
       special_dates = room.calendars.where(
         "status = ? AND day BETWEEN ? AND ? AND price <> ?",
@@ -22,18 +22,19 @@ class ReservationsController < ApplicationController
 
       @reservation = current_user.reservations.build(reservation_params)
       @reservation.room = room
-      @reservation.price = room.price
-      # @reservation.total = room.price * days
+      @reservation.price = room.price 
+      #@reservation.total = room.price * days
       # @reservation.save
 
       @reservation.total = room.price * (days - special_dates.count)
       special_dates.each do |date|
           @reservation.total += date.price
       end
+      
 
       if @reservation.Waiting!
         if room.Request?
-          flash[:notice] = "เราได้ทำการส่งคำขอของคุณแล้ว!"
+          flash[:notice] = "เราได้ทำการส่งคำขอของคุณแล้ว! "
         else
           charge(room, @reservation)
         end

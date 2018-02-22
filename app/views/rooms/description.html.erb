@@ -4,83 +4,109 @@
   </div>
   <div class="col-md-9">
     <div class="panel panel-default">
-
-      <div class="panel-heading">
+   <div class="panel-heading">
         รายละเอียดที่พัก
+      </div>
+    <div class="panel-body">
+        <div class="container">
+          <%= form_for @room do |f| %>
+
+            <div class="col-md-4"> 
+              <div class="form-group">
+                <label>ชื่อที่พัก</label>
+                <%= f.text_field :listing_name, placeholder: "คำบรรยาย", class: "form-control", required: true %>
+              </div>
+            </div>
+
+             <div class="col-md-12">
+              <div class="form-group">
+                <label>รายละเอียด</label>
+                <%= f.text_area :summary, rows: 5, placeholder: "ยิ่งคุณใส่คีย์เวิร์ดได้ดีเท่าไหร่ ก็ยิ่งทำให้เครื่องมือค้นหาทำการแสดงที่พักของคุณให้ลูกค้าเห็นมากขึ้นเท่านั้น เคล็ดลับคือการเดาใจลูกค้าให้ถูกว่า พวกเขาจะค้นหากันด้วยคำอะไรบ้าง", class: "form-control", required: true %>
+              </div>
+            </div>
+
+           </div> 
+            <div class="text-center">
+              <%= f.submit "บันทึก", class: "btn btn-warning" %>
+            </div>
+        <% end %>
+        
+      </div>
+
+ <div class="panel-heading">
+        ที่พักของคุณมีเตียงประเภทใดบ้าง? กรุณาตอบทุกข้อ
       </div>
       <div class="panel-body">
         <div class="container">
-
         <%= form_for @room do |f| %>
+          <div class="row">
 
-            <div class="row">
-              <div class="form-group">
-                <label>ชื่อที่พัก</label>
-                <%= f.text_field :listing_name, placeholder: "", class: "form-control", required: true %>
-              </div>
-            </div>
+           <div class="container">
 
-            <div class="row">
-              <div class="form-group">
-                <label>รายละเอียด</label>
-                <%= f.text_area :summary, rows: 5, placeholder: "บรรยายคร่าวๆ เกี่ยวกับที่พักคุณ", class: "form-control", required: true %>
-              </div>
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>เตียงขนาด 6 ฟุต:</label>
+              <%= f.select :king, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "king", prompt: "กรุณาเลือก...", class: "form-control" , required: true %>  
             </div>
-            <hr/>
-             <div class="col-md-7">
-                  <h3>ที่พักของคุณมีเตียงประเภทใดบ้าง?</h3></div>
-              <div class="col-xs-2" >
-               
-                
-                <span id="sum" class="form-control">0</span>ท่าน(สูงสุด)
-                
-                
-                </div>
-              <br/>
-              <br/>
-
-            <div class="row">
-            <div class="row">
-              <div class="col-xs-6">   
-                <label>เตียงขนาด 6 ฟุต:</label>
-                <%= f.select :king, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "king", prompt: "กรุณาเลือก...", class: "form-control", type: "bed_type" %>
-              </div>
-              <div class="col-xs-6">
-                <label>ที่นอนโซฟา:</label>
-                <%= f.select :sofa_bed, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "sofa_bed", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6">
-                <label>เตียงขนาด 5 ฟุต:</label>
-                <%= f.select :queen, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "queen", prompt: "กรุณาเลือก...", class: "form-control", type: "bed_type" %>
-              </div>
-              <div class="col-xs-6" >
-                <label>เตียงสองชั้น:</label>
-                  <%= f.select :double_deck, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "double_deck", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-6" >
-                <label>เตียงขนาด 3.5 ฟุต:</label>
-                <%= f.select :standard_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "standard_bed", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
-              </div>
-              <div class="col-xs-6">
-                <label>ที่นอนปิคนิค:</label>
-                <%= f.select :picnic_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "picnic_bed", prompt: "กรุณาเลือก...", class: "form-control",  type: "bed_type" %>
-              </div>
-              </div>
           </div>
-        <br/>
-        <br/>
-            <div class="text-center">
-              <%= f.submit "บันทึก", class: "btn btn-form" %>
-            </div>  
-          <% end %>
-        </div>
-      </div>
 
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>เตียงขนาด 5 ฟุต:</label>
+               <%= f.select :queen, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "sofa_bed", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>ที่นอนโซฟา:</label>
+              <%= f.select :sofa_bed, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "queen", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>เตียงสองชั้น:</label>
+                <%= f.select :double_deck, [["ไม่มี", 0], ["1", 2], ["2", 4], ["3", 6], ["4", 8], ["5", 10], ["6", 12], ["7", 14], ["8", 16], ["9", 18]], id: "double_deck", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>เตียงขนาด 3.5 ฟุต:</label>
+                <%= f.select :standard_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "standard_bed", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>ที่นอนปิคนิค:</label>
+             <%= f.select :picnic_bed, [["ไม่มี", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], id: "picnic_bed", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
+            </div>
+          </div>
+
+           <div class="col-md-4">
+            <div class="form-group">
+         <label>เข้าพักได้สูงสุด</label>
+             <span id="sum" class="form-control btn-block"><var>0</var></span>
+           </div>        
+        </div>
+
+
+       <div class="col-md-4">
+            <div class="form-group">
+              <label>ยืนยันจำนวนผู้เข้าพักสูงสุด:</label>
+             <%= f.text_field :max_guests, placeholder: "", class: "form-control", required: true %>
+            </div>
+          </div>
+
+        <div class="row"></div>
+        <div class="text-center">
+              <%= f.submit "บันทึก", class: "btn btn-warning" %>
+            </div>
+          
+          </div>
+<% end %>
 <script>
 $("select").change(function() {
     var combined = 0;
@@ -88,5 +114,6 @@ $("select").change(function() {
         combined += parseInt(this.value);
     });
     $("#sum").text(combined);
-}).trigger("change");
+  }).trigger("change");
+
 </script>

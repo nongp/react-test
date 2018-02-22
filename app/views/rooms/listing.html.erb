@@ -19,7 +19,7 @@
                 <div class="form-group">
                   <label>ประเภทที่พัก</label>
                   <%= f.select :home_type, [["คอนโด", "คอนโด"], ["พูลวิลล่า", "พูลวิลล่า"], ["บ้านพัก", "บ้านพัก"], ["โรงแรม", "โรงแรม"], ["รีสอร์ท", "รีสอร์ท"], ["เกสต์เฮาส์", "เกสต์เฮาส์"], ["ห้องเช่า/อาพาทเม้นท์", "ห้องเช่า/อาพาทเม้นท์"]],
-                                id: "home_type", prompt: "กรุณาเลือก...", class: "form-control" %>
+                                id: "home_type", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
                 </div>
               </div>
 
@@ -27,30 +27,30 @@
                 <div class="form-group">
                   <label>ประเภทห้องของที่พัก</label>
                   <%= f.select :room_type, [["ทั้งหลัง", "Entire"], ["ห้องส่วนตัว", "Private"], ["ห้องแบ่งเช่า", "Shared"]],
-                                id: "room_type", prompt: "กรุณาเลือก...", class: "form-control" %>
+                                id: "room_type", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
                 </div>
               </div>
 
               <div class="col-md-4 select">
-                <div class="form-group">
+                <div class="hidden">
                   <label>รูปแบบการรับจอง</label>
-                  <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "กรุณาเลือก...", class: "form-control" %>
+                  <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "Request", class: "form-control" %>
                 </div>
               </div>
 
-              <div class="col-md-4 select">
+             <!--  <div class="col-md-4 select">
                 <div class="form-group">
                   <label>เข้าพักได้</label>
                   <%= f.select :accommodate, [["2 ท่าน", 2], ["3 ท่าน", 3], ["4 ท่าน", 4], ["5 ท่าน", 5], ["6 ท่าน", 6], ["7 ท่าน", 7], ["8 ท่าน", 8], ["9 ท่าน", 9], ["10 ท่าน", 10], ["11 ท่าน", 11], ["12 ท่าน", 12], ["13 ท่าน", 13], ["14 ท่าน", 14],["15+", 15]],
                                 id: "accommodate", prompt: "กรุณาเลือก...", class: "form-control" %>
                 </div>
               </div>
-
+ -->
               <div class="col-md-4 select">
                 <div class="form-group">
                   <label>ห้องนอน</label>
                   <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9+", 9]],
-                                id: "bed_room", prompt: "กรุณาเลือก...", class: "form-control" %>
+                                id: "bed_room", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
                 </div>
               </div>
 
@@ -58,7 +58,7 @@
                 <div class="form-group">
                   <label>ห้องน้ำ</label>
                   <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9+", 9]],
-                                id: "bath_rooms", prompt: "กรุณาเลือก...", class: "form-control" %>
+                                id: "bath_rooms", prompt: "กรุณาเลือก...", class: "form-control", required: true %>
                 </div>
               </div>
 
