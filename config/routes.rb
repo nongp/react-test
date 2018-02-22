@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   get 'search' => 'pages#search'
 
-  get "/pages/*terms" => 'pages#show', as: :terms, format: false
+  
 
   # ---- AirKong ------
   get 'dashboard' => 'dashboards#index'
@@ -64,6 +64,8 @@ Rails.application.routes.draw do
   post '/notification_settings' => 'settings#update'
 
   get '/notifications' => 'notifications#index'
+
+  get "/pages/*terms" => "pages#show"
 
   mount ActionCable.server => '/cable'
 

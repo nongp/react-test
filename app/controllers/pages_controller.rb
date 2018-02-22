@@ -3,14 +3,6 @@ class PagesController < ApplicationController
     @rooms = Room.where(active: true).limit(3)
   end
 
-  def show
-        if valid_page?
-          render template: "pages/#{params[:terms]}"
-        else
-          render file: "public/404.html", status: :not_found
-        end
-      end
-
   def search
     # STEP 1
     if params[:search].present? && params[:search].strip != ""
@@ -62,9 +54,3 @@ class PagesController < ApplicationController
 
   end
 end
-
-private
-    def valid_page?
-      File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:terms]}.html.erb"))
-    end
-  end
