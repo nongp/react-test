@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   get 'search' => 'pages#search'
 
-  get 'pages/:terms' => 'high_voltage/pages#show', id: 'terms'
+  get "/pages/*terms" => 'pages#show', as: :terms, format: false
 
   # ---- AirKong ------
   get 'dashboard' => 'dashboards#index'

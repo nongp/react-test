@@ -61,6 +61,8 @@ gem 'pg', '~> 0.18'
 
 gem 'gmaps4rails'
 
+gem 'high_voltage', '~> 3.0.0'
+
 group :production do
   gem 'rails_12factor'
   gem 'redis', '~> 3.2'
