@@ -4,8 +4,12 @@ class PagesController < ApplicationController
   end
 
   def show
-    render template: "pages/#{params[:terms]}"
-  end
+        if valid_page?
+          render template: "pages/#{params[:terms]}"
+        else
+          render file: "public/404.html", status: :not_found
+        end
+      end
 
   def search
     # STEP 1
@@ -58,3 +62,9 @@ class PagesController < ApplicationController
 
   end
 end
+
+private
+    def valid_page?
+      File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:terms]}.html.erb"))
+    end
+  end
