@@ -4,10 +4,8 @@
     <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
   </li>
   <li class="sidebar-item">
-    <%= link_to "ราคา", pricing_room_path, class: "sidebar-link active" %>
-    <% if !@room.price.blank? %>
-      <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
-    <% end %>
+    <%= link_to "สิ่งอำนวยความสะดวก", amenities_room_path, class: "sidebar-link active" %>
+    <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
   </li>
   <li class="sidebar-item">
     <%= link_to "รายละเอียด", description_room_path, class: "sidebar-link active" %>
@@ -16,14 +14,16 @@
     <% end %>
   </li>
   <li class="sidebar-item">
+    <%= link_to "ราคา", pricing_room_path, class: "sidebar-link active" %>
+    <% if !@room.price.blank? %>
+      <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li> 
+  <li class="sidebar-item">
     <%= link_to "รูปภาพ", photo_upload_room_path, class: "sidebar-link active" %>
     <% if !@room.photos.blank? %>
       <span id="photo_check" class="pull-right icon-green"><i class="fa fa-check"></i></span>
     <% end %>
-  </li>
-  <li class="sidebar-item">
-    <%= link_to "สิ่งอำนวยความสะดวก", amenities_room_path, class: "sidebar-link active" %>
-    <span class="pull-right icon-green"><i class="fa fa-check"></i></span>
   </li>
   <li class="sidebar-item">
     <%= link_to "ที่อยู่", location_room_path, class: "sidebar-link active" %>
