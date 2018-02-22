@@ -72,6 +72,7 @@
             <ul class="amenities">
               <li class="<%= 'text-line-through' if !@room.is_kitchen %>">ห้องครัวและอุปกรณ์ทำอาหาร</li>
               <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet/Wifi</li>
+              <li class="<%= 'text-line-through' if !@room.is_air %>">แอร์ทั้งหลัง</li>
               <li class="<%= 'text-line-through' if !@room.is_tv %>">เคเบิ้ลทีวี </li>
                <li class="<%= 'text-line-through' if !@room.is_parking %>">ที่จอดรถ</li>
               <li class="<%= 'text-line-through' if !@room.is_pet_friendly %>">สัตว์เลี้ยงเข้าพักได้</li>
