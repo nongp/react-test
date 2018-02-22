@@ -3,6 +3,10 @@ class PagesController < ApplicationController
     @rooms = Room.where(active: true).limit(3)
   end
 
+  def show
+    render template: "pages/#{params[:terms]}"
+  end
+
   def search
     # STEP 1
     if params[:search].present? && params[:search].strip != ""

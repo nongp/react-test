@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   get 'search' => 'pages#search'
 
+  get 'pages/:terms' => 'high_voltage/pages#show', id: 'terms'
+
   # ---- AirKong ------
   get 'dashboard' => 'dashboards#index'
 
