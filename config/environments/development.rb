@@ -66,25 +66,16 @@ Rails.application.configure do
     password: '5d1fd00638901a64158cefa81d359600'
   }
 
-#  config.paperclip_defaults = {
-#     storage: :s3,
-#     path: ':class/:attachment/:id/:style/:filename',
-#     s3_host_name: 's3-ap-southeast-2.amazonaws.com',
-#     s3_credentials: {
-    Paperclip::Attachment.default_options[:s3_credentials] = {
-      :bucket => ENV['DEV_S3_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
-      :region => 'ap-northeast-1'
-    }
-    Paperclip::Attachment.default_options[:s3_region] = 'ap-northeast-1'
-    Paperclip::Attachment.default_options[:s3_host_name] = 's3.ap-northeast-1.amazonaws.com'
-    Paperclip.options[:command_path] = 'usr/local/bin'
-#      :s3_credentials => '#{Rails.root}/config/aws.yml'
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :bucket => ENV['DEV_S3_BUCKET_NAME'],
+  :path => '/:class/:attachment/:id/:style/:filename',
+    :s3_credentials => {    
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+    :s3_region => ENV['DEV_S3_REGION']
 
-    
-
-#  }
-#}
+  }
+}
 
 end
