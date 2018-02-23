@@ -65,7 +65,6 @@ Rails.application.routes.draw do
 
   get '/notifications' => 'notifications#index'
 
-  get "/pages/*terms" => "pages#show"
 
   mount ActionCable.server => '/cable'
 
