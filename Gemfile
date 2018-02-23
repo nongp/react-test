@@ -61,6 +61,8 @@ gem 'pg', '~> 0.18'
 
 gem 'gmaps4rails'
 
+gem 'paperclip-ffmpeg', '~> 1.2'
+
 group :production do
   gem 'rails_12factor'
   gem 'redis', '~> 3.2'

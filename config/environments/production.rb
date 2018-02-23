@@ -90,17 +90,28 @@ Rails.application.configure do
     password: '3f81f9067ee0716fe968ba28cdf0d201'
   }
 
-    config.paperclip_defaults = {
-  :storage => :s3,
-  :bucket => ENV['AWS_BUCKET'],
-  :path => '/:class/:attachment/:id/:style/:filename',
-  :s3_credentials => {    
+#    config.paperclip_defaults = {
+#  :storage => :s3,
+#  :bucket => ENV['AWS_BUCKET'],
+#  :path => '/:class/:attachment/:id/:style/:filename',
+ # :s3_credentials => {    
+#    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+#    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+#    :s3_region => ENV['AWS_S3_REGION']
+
+#  }
+#}
+
+    Paperclip::Attachment.default_options[:s3_credentials] = {
+    :bucket => ENV['AWS_BUCKET'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
-    :s3_region => ENV['AWS_S3_REGION']
-
+    :region => 'us-east-1'
+    :path => '/:class/:attachment/:id/:style/:filename'
   }
-}
+    Paperclip::Attachment.default_options[:s3_region] = 'us-east-1'
+    Paperclip::Attachment.default_options[:s3_host_name] = 's3.amazonaws.com'
+    Paperclip.options[:command_path] = 'usr/local/bin'
 
 
   # Use a different logger for distributed setups.
