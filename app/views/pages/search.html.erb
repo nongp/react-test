@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row-filter">
       <br/>
       <div class="collapse" id="collapsePanel">
 
@@ -78,19 +78,47 @@
 
               <div class="row">
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_tv_eq]", true %> ทีวี
+                  <%= check_box_tag "q[is_tv_eq]", true %> เคเบิ้ลทีวี 
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_kitchen_eq]", true %> ห้องครัว
+                  <%= check_box_tag "q[is_kitchen_eq]", true %> ห้องครัวและอุปกรณ์ทำอาหาร 
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_Internet_eq]", true %> WiFi
+                  <%= check_box_tag "q[is_Internet_eq]", true %> Internet/Wifi
                 </div>
                 <div class="col-md-4">
-                  <%= check_box_tag "q[is_heating_eq]", true %> เครื่องทำน้ำร้อน
+                  <%= check_box_tag "q[is_heating_eq]", true %> เครื่องทำน้ำอุ่น
                 </div>
                 <div class="col-md-4">
                   <%= check_box_tag "q[is_air_eq]", true %> เครื่องปรับอากาศ
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_bbq_eq]", true %> เตาและอุปกรณ์ปิ้งย่าง
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_karaoke_eq]", true %> คาราโอเกะ
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_parking_eq]", true %> ที่จอดรถ
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_meeting_room_eq]", true %> ห้องประชุม
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_pet_friendly_eq]", true %> สัตว์เลี้ยงเข้าพักได้
+                </div>
+                 <div class="col-md-4">
+                  <%= check_box_tag "q[is_pool_table_eq]", true %> โต๊พูล
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_private_pool_eq]", true %> สระว่ายน้ำ ส่วนตัว
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_public_pool_eq]", true %> สระว่ายน้ำ ส่วนกลาง
+                </div>
+                <div class="col-md-4">
+                  <%= check_box_tag "q[is_breakfast_eq]", true %> อาหารเช้า
+                </div>
                 </div>
               </div>
               <hr/>
@@ -156,6 +184,7 @@
 <script>
   $('#start_date').datepicker({
     dateFormat: 'dd-mm-yy',
+    numberOfMonths: 2,
     minDate: 0,
     maxDate: '3m',
     onSelect: function(selected) {
@@ -166,6 +195,7 @@
 
   $('#end_date').datepicker({
     dateFormat: 'dd-mm-yy',
+    numberOfMonths: 2,
     minDate: 0,
     maxDate: '3m',
     onSelect: function(selected) {
@@ -192,9 +222,9 @@
 
     $("#slider-range").slider({
       range: true,
-      min: 300,
+      min: 500,
       max: 30000,
-      values: [300, 30000],
+      values: [3000, 10000],
       slide: function(event, ui) {
         $("#q_price_gteq").val(ui.values[0]);
         $("#q_price_lteq").val(ui.values[1]);

@@ -1,13 +1,113 @@
 <div class="row">
   <div class="col-md-3">
     <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "ตั้งค่าการชำระเงิน", payment_method_path, class: "sidebar-link active" %></li>
-      <li class="sidebar-item"><%= link_to "ตั้งค่าการรับเงิน", payout_method_path, class: "sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "ตั้งค่าคอมมิชชั่น", payment_method_path, class: "sidebar-link active" %></li>
+    <!--   <li class="sidebar-item"><%= link_to "ตั้งค่าการรับเงิน", payout_method_path, class: "sidebar-link" %></li> -->
       <li class="sidebar-item"><%= link_to "คั้งค่าการแจ้งเตือน", notification_settings_path, class: "sidebar-link" %></li>
     </ul>
   </div>
 
-  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">เบอร์ติดต่อ</div>
+      <div class="panel-body">
+        <div class="container">
+          <% if !current_user.phone_number.blank? %>
+              <h4><%= current_user.phone_number %></h4>
+              <button class="btn btn-default" data-toggle="modal" data-target="#update-phone">เพิ่ม/แก้ไขเบอร์โทร</button>
+              <% if current_user.phone_verified == false %>
+                  <button class="btn btn-default" data-toggle="modal" data-target="#verify-phone">Verify</button>
+              <% end %>
+          <% else %>
+              <button class="btn btn-default" data-toggle="modal" data-target="#update-phone">เพิ่มเบอร์ติดต่อ</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL FOR PHONE NUMBER -->
+<div id="update-phone" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">เบอร์มือถือ (ตัวอย่างเช่น +66822222222)</h4>
+      </div>
+
+      <div class="modal-body">
+        <%= form_for current_user, url: update_phone_number_user_path(current_user) do |f| %>
+            <div class="form-group">
+              <%= f.phone_field :phone_number, class: "form-control", placeholder: "เบอร์ติดต่อ" %>
+            </div>
+            <div class="text-center">
+              <%= f.submit "บันทึก", class: "btn btn-normal" %>
+            </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FOR VERIFICATION -->
+<div id="verify-phone" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Verification Code</h4>
+      </div>
+
+      <div class="modal-body">
+        <%= form_for current_user, url: verify_phone_number_user_path(current_user), method: :post do |f| %>
+            <div class="form-group">
+              <%= f.text_field :pin, class: "form-control", placeholder: "PIN ของคุณคือ", value: "" %>
+            </div>
+            <div class="text-center">
+              <%= f.submit "ยืนยันเบอร์โทร", class: "btn btn-normal" %>
+            </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-md-9">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        คอมมิชชั่น
+      </div>
+      <div class="panel-body">
+        <div class="container">
+        <%= form_for @room do |f| %>
+
+           <p class="mb-0">ผู้ให้บริการโรงแรม ผู้ค้าส่งโรงแรม เจ้าของที่พัก และตัวแทนการท่องเที่ยว จะเป็นผู้รับผิดชอบในการชำระค่าธรรมเนียมการแนะนำ 10% ให้กับ StaynPlay.club สำหรับการสำรองห้องพักที่เกิดขึ้นจริงบนระบบหรืออาจเลือกที่จะเพิ่มค่าธรรมเนียมการอ้างอิงให้กับ StaynPlay.club 
+
+            ผู้ให้บริการโรงแรม ผู้ค้าส่งโรงแรม เจ้าของที่พัก และตัวแทนการท่องเที่ยวมีหน้าที่ในการชำระค่าคอมมิชชั่นดังกล่าวหลังจากลูกค้าได้ทำการเช็คเอาท์ </p>
+
+          <div class="col-md-4 center select">
+            <div class="form-group">
+              <label>% คอมมิชชั่น</label>
+              <%= f.select :bed_room, [["10%", 0.10], ["11%", 0.11], ["12%", 0.12], ["13%", 0.13], ["14%", 0.14], ["15%", 0.15], ["16%", 0.16], ["17%", 0.17], ["18%", 0.18]], id: "commission", prompt: "10% คือค่าเริ่มต้น", class: "form-control", required: false %>
+            </div>
+          
+           <div class="row">
+            <div class="text-center">
+              <%= f.submit "บันทึก", class: "btn btn-form" %>
+              <% end %>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+ <!--  <div class="col-md-9">
     <div class="panel panel-default">
       <div class="panel-heading">ตั้งค่าการชำระเงิน</div>
       <div class="panel-body">
@@ -103,4 +203,4 @@
       // Prevent the form from being submitted;
       return false;
   });
-</script>
+</script> -->
