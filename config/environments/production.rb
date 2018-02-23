@@ -106,9 +106,9 @@ Rails.application.configure do
     :bucket => ENV['AWS_BUCKET'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
-    :region => 'us-east-1'
+    :region => ENV['AWS_S3_REGION']
   }
-    Paperclip::Attachment.default_options[:s3_region] = 'us-east-1'
+    Paperclip::Attachment.default_options[:s3_region] = 'ap-southeast-1'
     Paperclip::Attachment.default_options[:s3_host_name] = 's3.amazonaws.com'
     Paperclip.options[:command_path] = 'usr/local/bin'
 
