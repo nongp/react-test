@@ -28,7 +28,7 @@
           <div class="col-md-4 select">
             <div class="hidden">
               <label>รูปแบบการรับจอง</label>
-              <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Request', prompt: "Request", class: "form-control" %>
+              <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "Request", class: "form-control" %>
             </div>
           </div>
 
