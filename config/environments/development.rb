@@ -66,15 +66,28 @@ Rails.application.configure do
     password: '5d1fd00638901a64158cefa81d359600'
   }
 
+ # config.paperclip_defaults = {
+ # :storage => :s3,
+ # :bucket => ENV['DEV_S3_BUCKET_NAME'],
+ # :path => '/:class/:attachment/:id/:style/:filename',
+ #   :s3_credentials => {    
+ #   :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+ #   :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+ #   :s3_region => ENV['DEV_S3_REGION'],
+ #   :url => 'snpdevelopment.s3.amazonaws.com'#
+
+ # }
+#}
+
+
   config.paperclip_defaults = {
   :storage => :s3,
   :bucket => ENV['DEV_S3_BUCKET_NAME'],
-  :path => '/:class/:attachment/:id/:style/:filename',
-    :s3_credentials => {    
+  :s3_host_name => 's3.ap-northeast-1.amazonaws.com',
+  :s3_credentials => {    
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
-    :s3_region => ENV['DEV_S3_REGION'],
-    :url => 'snpdevelopment.s3.amazonaws.com'
+    :s3_region => ENV['DEV_S3_REGION']
 
   }
 }
