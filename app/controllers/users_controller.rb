@@ -46,6 +46,8 @@ class UsersController < ApplicationController
   #    @login_link = account.login_links.create()
   end
 
+  def commission
+  end
 
   def add_card
     begin

@@ -26,6 +26,40 @@
             <% end %>
         </div>
       </div>
+
+
+
     </div>
+
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        คอมมิชชั่น
+      </div>
+      <div class="panel-body">
+        <div class="container">
+        
+           <p class="mb-0">ระบบจะทำการเรียกเก็บค่าธรรมเนียม 10% จากยอดการสำรองห้องพักที่เกิดขึ้นบนระบบ ท่านสามารถเลือกที่จะเพิ่มค่าธรรมเนียมให้กับ StaynPlay.club หากท่านต้องการให้ที่พักของท่านถูกพบเห็นบ่อยขึ้น</p>
+
+       <%= form_for :setting do |f| %>
+          <div class="col-md-4 center">
+            <div class="form-group-select">
+              <label>คอมมิชชั่น</label>
+              <%= f.select :commission, [["10%", 0.10], ["11%", 0.11], ["12%", 0.12], ["13%", 0.13], ["14%", 0.14], ["15%", 0.15], ["16%", 0.16], ["17%", 0.17], ["18%", 0.18]], id: "commission", select: "10%", class: "form-control", required: false %>
+            </div>
+          </div>
+          
+              </div>
+           <div class="text-center">
+                <%= f.submit "บันทึกการตั้งค่า", class: "btn btn-normal" %>
+              </div>
+              <% end %>
+            </div>
+            </div>
+          </div>
+        </div>
+
+
   </div>
+
 </div>
+
