@@ -1,11 +1,9 @@
-<style>
-    .wrapper { float: left; clear: left; display: table; table-layout: fixed; }
-    img.img-responsive { display: table-cell; max-width: 100%; }
-</style>
-<div class="wrapper col-md-3">
-    <img class="img-responsive" src="/assets/group_booking.png"/>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">เที่ยวกันเป็นก๊วน ลดกันทั้งแก๊งค์</h1>
+    <p class="lead">ค้นหาที่พัก เช็ควันว่าง </p>
+  </div>
 </div>
-
 
 
 
@@ -99,7 +97,7 @@
     maxDate: '3m',
     onSelect: function(selected) {
       $('#end_date').datepicker("option", "minDate", selected);
-      $('#end_date').attr("disabled", true);
+      $('#end_date').attr("disabled", false);
     }
   });
 

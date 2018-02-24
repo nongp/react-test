@@ -1,5 +1,5 @@
 <% rooms.each do |room| %>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading preview">
           <%= image_tag room.cover_photo("300x300>") %> 
@@ -7,7 +7,7 @@
         <div class="panel-body">
           <%= link_to room.listing_name, room %><span class="pull-right">~ <%= room.price %> บ./คืน</span><br/>
           <%= room.home_type %> ขนาด <%= room.bed_room %> <i class="fa fa-bed"></i> ห้องนอน <%= room.bath_room %> <i class="fa fa-bath"></i> ห้องน้ำ พักได้สูงสุด <%= room.max_guests %> ท่าน
-          <div id="star_<%= room.id %>"></div> <%= room.average_rating %> รีวิว
+          <div id="star_<%= room.id %>"> <%= room.average_rating %> รีวิว</div> 
         </div>
       </div>
     </div>
