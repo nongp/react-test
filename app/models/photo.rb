@@ -6,7 +6,8 @@ class Photo < ApplicationRecord
   	thumb: "100x100>" },
   	:storage => :s3,
   	:s3_credentials => "#{Rails.root}/config/aws.yml",
-  	:bucket => "staynplayclub"
+  	:bucket => "staynplayclub",
+  	:path => '/:class/:attachment/:id/:style/:filename'
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
