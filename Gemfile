@@ -63,6 +63,8 @@ gem 'gmaps4rails'
 
 gem 'paperclip-ffmpeg', '~> 1.2'
 
+gem 'dotenv-rails'
+
 
 group :production do
   gem 'rails_12factor'
