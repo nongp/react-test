@@ -22,7 +22,7 @@
 config/database.yml
 config/aws.yml
 .env
-
+public/assets/**
 
 # Compiled source #
 ###################
