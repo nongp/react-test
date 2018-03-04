@@ -1,104 +1,17 @@
-
-<div class="agileheader">
-  
+<div class="text-xs-center" style="color: #fff; background-color: #1a1a1a; padding: 100px;">
+  <h2>คุณล่ะ มีบ้านหลังที่ 2 หรือเปล่า?</h2> 
+  <p class="lead">
+    For a more professional header, footer, navigation, mega menu, and sidebar, I recommend you to checkout the awesome <a class="s24-link" style="color: #66bb6a;" href="https://myflashlabs.github.io/24component-bars/">24component-bars</a> jQuery plugin and CSS framework. It lets you create almost any kind of bar fast and easy. Cheers!
+  </p>
+  <h4>Like it? Share it!</h4>
+  <p class="lead">
+    Please share and help us get recognized by more people.
+  </p>
 </div>
-<!--//header-->
+				  
+				  <h2>เงื่อนไขการให้บริการ<h2>
 
-<!--main-->
-<div class="main-w3l">
-<div class="w3layouts-main">
-  <h2>สมัครสมาชิก</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-     <div class="form-group" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}">
-        <%= f.email_field :email, autofocus: true, placeholder: "อีเมล์", class: "form-control" %>
-      </div>
-
-       <div class="form-group" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}" >
-        <%= f.password_field :password, autocomplete: "off", placeholder: "รหัสผ่าน", class: "form-control" %>
-      </div>
-
-      <div class="form-group" >
-        <%= f.text_field :fullname, autofocus: true, placeholder: "ชื่อ - สกุล", class: "form-control" %>
-      </div>
-         
-          <div>
-              <% if devise_mapping.rememberable? %>
-              <%= f.check_box :remember_me %> จดจำฉันไว้ในระบบ
-            <% end %>                  
-            <span> <%= link_to "ลืมรหัสผ่าน?", new_user_password_path %>
-          </div>
-          </span>
-
-        <div class="actions">
-        <%= f.submit "เข้าสู่ระบบ", class: "btn btn-normal btn-block" %>
-      
-        <% end %>
-      </div>
- 
-    <%= link_to "ลงชื่อเข้าใช้ด้วย Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" %>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!--//main-->
-
-<!--footer-->
-<!-- <div class="footer-w3l">
-  <p>StayNPlay Technology | All rights reserved &copy; 2018 </p>
-</div> -->
-
-
-
-
-
-<!-- <div class="row">
-  <div class="col-md-4 col-md-offset-4">
-
-    <h2 class="text-center">สมัครสมาชิก</h2>
-    <br/>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render 'shared/devisemes' %>
-
-    
-      <div class="form-group">
-        <%= f.text_field :fullname, autofocus: true, placeholder: "ชื่อ - สกุล", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.email_field :email, autofocus: true, placeholder: "อีเมล์", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.password_field :password, autocomplete: "off", placeholder: "รหัสผ่าน", class: "form-control" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "สมัรสมาชิก", class: "btn btn-normal btn-block" %>
-        <hr/>
-    <%= link_to "ลงชื่อเข้าใช้ด้วย Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" %> 
-      </div>
-    <% end %>
-    <br/>
-           <div class="text-center">
-       <div class="form-group" font="5">เมื่อท่านสมัครสมาชิก เราถือว่าท่านได้อ่านและยอมรับใน 
-        <a href="#" data-toggle="modal" data-target="#exampleModalLong">ข้อตกลงและเงื่อนไขการใช้บริการ</a>
-<!-- Modal ของเราทุกประการ 
-            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLongTitle">ข้อตกลงและเงื่อนไขการใช้บริการเว็บไซต์<br/>(Term of Service)</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body text-left">
-                  <p> ยินดีต้อนรับสู่เว็บไซต์ Staynplay.club และขอบคุณผู้ใช้บริการที่เข้ามาเยื่ยมชมเว็บไซต์ของเรา Staynplay.club เป็นเว็บไซต์สื่อกลางที่ให้บริการด้านข้อมูลที่พัก รีสอรท์ และโรงแรม เพื่อให้ผู้ใช้บริการสามารถลงประกาศให้เช่า และค้นหาข้อมูลที่พัก รีสอรท์ และโรงแรม ได้ตรงตามความต้องการของผู้ใช้บริการ ภายใต้การให้บริการของเว็บไซต์ เราจำเป็นต้องมีข้อตกลงและเงื่อนไขการใช้บริการ ดังนั้น กรุณาอ่านข้อตกลงและเงื่อนไขการใช้บริการเว็บไซต์นี้ให้ละเอียดถี่ถ้วน และตกลงยอมรับเงื่อนไขนี้ก่อนเข้าใช้งานเว็บไซต์</p>
+				  <p> ยินดีต้อนรับสู่เว็บไซต์ Staynplay.club และขอบคุณผู้ใช้บริการที่เข้ามาเยื่ยมชมเว็บไซต์ของเรา Staynplay.club เป็นเว็บไซต์สื่อกลางที่ให้บริการด้านข้อมูลที่พัก รีสอรท์ และโรงแรม เพื่อให้ผู้ใช้บริการสามารถลงประกาศให้เช่า และค้นหาข้อมูลที่พัก รีสอรท์ และโรงแรม ได้ตรงตามความต้องการของผู้ใช้บริการ ภายใต้การให้บริการของเว็บไซต์ เราจำเป็นต้องมีข้อตกลงและเงื่อนไขการใช้บริการ ดังนั้น กรุณาอ่านข้อตกลงและเงื่อนไขการใช้บริการเว็บไซต์นี้ให้ละเอียดถี่ถ้วน และตกลงยอมรับเงื่อนไขนี้ก่อนเข้าใช้งานเว็บไซต์</p>
                   <h4>1. บัญชีสมาชิก</h4>
                   <p>บัญชี StaynPlay.club และ ID ผู้ใช้ ของคุณไม่สามารถโอนหรือขายให้บุคคลอื่นได้ หากคุณลงทะเบียนเป็นองค์กรทางธุรกิจ (เช่นตัวแทนการท่องเที่ยว ผู้ค้าส่ง ผู้ประสานงานกลุ่มโรงแรม หรือผู้ให้บริการการท่องเที่ยวอื่น ๆ ) คุณรับรองว่าคุณมีอำนาจในการผูกมัดกับข้อตกลงนี้ ผู้ประกอบการที่ใช้บริการนี้เพื่อตรวจสอบราคาโดยปราศจากเจตนาในการติดต่อผู้ขายออนไลน์จะต้องถูกระงับหรือยกเลิกบัญชี
                   <h4>2. ค่าธรรมเนียมและบริการ</h4>
@@ -118,18 +31,3 @@
                   <p>ผู้ใช้บริการต้องยอมรับว่า Staynplay.club เป็นเพียงเว็บไซต์สื่อกลางที่ให้บริการด้านข้อมูลให้เช่าที่พัก รีสอรท์ และโรงแรม เพื่อให้ผู้ใช้บริการสามารถลงประกาศให้เช่า และค้นหาที่พัก เท่านั้น ทางเว็บไซต์ไม่ใช่ตัวแทนหรือหุ้นส่วนที่มีส่วนเกี่ยวข้องกับเจ้าของโรงแรม ข้อมูลบ้านพัก และโรงแรม แต่อย่างใด และในการนำเสนอข้อมูลดังกล่าวหากก่อให้เกิดความเสียหายแก่ผู้ใช้บริการ ทางเว็บไซต์จะไม่ขอรับผิด หรือรับผิดชอบต่อความเสียหาย หรือภาระผูกพันทางกฎหมายไม่ว่าในกรณีใดๆทั้งสิ้น หากแต่เมื่อพบข้อมูลที่มีความผิดพลาดทางเว็บไซต์จะยินดีให้เจ้าของข้อมูลหรือทางเว็บไซต์ จะดำเนินการแก้ไขข้อมูลให้ถูกต้องทันที</p>
                   <h4>9. การเปลี่ยนแปลงข้อตกลงและเงื่อนไข</h4>
                   เว็บไซต์อาจมีการเปลี่ยนแปลงข้อตกลงและเงื่อนไขการใช้บริการ ทั้งนี้เพื่อความเหมาะสมและมีประสิทธิภาพในการให้บริการ ดังนั้นเว็บไซต์จึงขอแนะนำให้ผู้ใช้บริการได้เข้ามาอัพเดตข้อมูลข้อตกลงและเงื่อนไขการใช้บริการเว็บไซต์ให้ละเอียดก่อนเข้าใช้บริการจากเว็บไซต์</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-blue" data-dismiss="modal">ฉันยอมรับ</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-         
-       </div>
-       </div>
-  </div>
-</div> -->
-
-
-
