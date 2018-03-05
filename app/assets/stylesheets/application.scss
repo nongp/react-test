@@ -19,7 +19,7 @@ a {
 }
 
 .text-babu, .icon-babu {
-  color: #2c2c2c;
+  color: #cccccc;
 }
 
 .text-red, .icon-red {
@@ -390,8 +390,8 @@ a {
 }
 
 .banner {
-  background: url('../assets/bg3.jpg') no-repeat 62% 34%;
-  margin-top: 50px;
+  background: url('../assets/staynplay_banner.png') no-repeat 62% 34%;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 
@@ -579,26 +579,7 @@ li {
 
 //section
 
-.section {
-  position: relative;
-  background-image: url('https://www.helpr.in/images/backgrounds/section-light-bg.png');
-  background-position: bottom center;
-  background-repeat: repeat-x;
-}
 
-.section-inverse-color {
-  background-image: url('../assets/bg3.jpg');
-  background-color: #222222;
-  color: #5a5a5a;
-}
-
-.helpr-section {
-  height: 100%;
-  background-image: url('../assets/bg3.jpg');
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-}
 
 .helpr-text {
   height: 575px;
@@ -1584,6 +1565,8 @@ item3.active p {
 
 //login form
 
+
+
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -1591,194 +1574,64 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /* reset */
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-nav {
-  ul, li {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-  }
-}
-
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ol, ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote {
-  &:before, &:after {
-    content: '';
-    content: none;
-  }
-}
-
-q {
-  &:before, &:after {
-    content: '';
-    content: none;
-  }
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
 /* start editing from here */
-
-a {
-  text-decoration: none;
-}
-
-.txt-rt {
-  text-align: right;
-}
-
-/* text align right */
-
-.txt-lt {
-  text-align: left;
-}
-
-/* text align left */
-
-.txt-center {
-  text-align: center;
-}
-
-/* text align center */
-
-.float-rt {
-  float: right;
-}
-
-/* float right */
-
-.float-lt {
-  float: left;
-}
-
-/* float left */
-
-.clear {
-  clear: both;
-}
-
-/* clear float */
-
-.pos-relative {
-  position: relative;
-}
-
-/* Position Relative */
-
-.pos-absolute {
-  position: absolute;
-}
-
-/* Position Absolute */
-
-.vertical-base {
-  vertical-align: baseline;
-}
-
-/* vertical align baseline */
-
-.vertical-top {
-  vertical-align: top;
-}
-
-/* vertical align top */
-
-nav {
-  &.vertical ul li {
-    display: block;
-  }
-  &.horizontal ul li {
-    display: inline-block;
-  }
-}
-
-/* vertical menu */
-/* horizontal menu */
-
-img {
-  max-width: 100%;
-}
-
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{ vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{  vertical-align:top;}/* vertical align top */
+nav.vertical ul li{ display:block;}/* vertical menu */
+nav.horizontal ul li{ display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
 /*end reset*/
 
-body p, h1, h2, h3, h4, h5, h6, a {
+body p,h1,h2,h3,h4,h5,h6,a{
   font-family: 'Roboto', sans-serif;
 }
-
 body {
-  background: #2c2c2c;
-  /*--background: url('../assets/bg3.jpg') no-repeat 62% 34%;*/
-  background-size: cover;
-  text-align: left;
+  /*--background:#2c2c2c;*/
+  
+    background: url('../assets/login.png') no-repeat 62% 34%;
+    background-size: cover;
+    text-align:left;
 }
-
 /*--header--*/
-
 .agileheader h1 {
-  font-size: 51px;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  color: #fff;
-  font-weight: 600;
-  margin: 70px 0px;
-}
-
-.w3layouts-main {
-  h2 {
+    font-size: 51px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
     color: #fff;
+    font-weight: 600;
+    margin: 70px 0px;
+}
+.w3layouts-main h2 {
+  color: #fff;
     font-size: 29px;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding-bottom: 0px;
-  }
-  width: 25%;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.34);
-  padding: 42px 35px;
 }
-
+.w3layouts-main {
+    width: 25%;
+    margin: 0 auto;
+    background:rgba(0, 0, 0, 0.34);
+    padding: 42px 35px;
+}
 /*--//header--*/
 /*--main--*/
-
-input {
-  &[type="name"], &[type="email"], &[type="password"] {
+input[type="name"], input[type="email"], input[type="password"] {
     width: 88%;
     padding: 15px 0px 15px 42px;
     border: 1px solid #fff;
@@ -1787,130 +1640,121 @@ input {
     color: #fff;
     margin: 14px 0px;
     font-family: 'Roboto', sans-serif;
-  }
-  &[type="name"], &[type="email"] {
+}
+input[type="name"] {
     background: url("../assets/mail.png") no-repeat 10px 11px;
     background-size: 24px;
-  }
-  &[type="password"] {
+}
+input[type="email"] {
+    background: url("../assets/mail.png") no-repeat 10px 11px;
+    background-size: 24px;
+}
+input[type="password"] {
     background: url("../assets/pass.png") no-repeat 8px 9px;
     background-size: 28px;
-  }
 }
-
-.w3layouts-main {
-  span {
+.w3layouts-main span {
     font-size: 16px;
     color: #fff;
     float: left;
     width: 32%;
-    margin-top: 8px;
-    font-family: 'Roboto', sans-serif;
-  }
-  h6 {
+  margin-top: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+.w3layouts-main h6 {
     font-size: 16px;
     float: right;
     width: 37%;
-    color: #fff;
+  color: #fff;
     letter-spacing: 1px;
-    margin-top: 8px;
-    text-decoration: underline;
-  }
-  a {
+  margin-top: 8px;
+  text-decoration:underline;
+}
+.w3layouts-main a {
     color: #fff;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    &:hover {
-      color: rgba(208, 95, 216, 0.9);
-      transition: 0.5s all;
-      -webkit-transition: 0.5s all;
-      -o-transition: 0.5s all;
-      -moz-transition: 0.5s all;
-      -ms-transition: 0.5s all;
-    }
-  }
+  transition:0.5s all;
+  -webkit-transition:0.5s all;
+  -o-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -ms-transition:0.5s all;
 }
-
+.w3layouts-main a:hover{
+  color:rgba(208, 95, 216, 0.9);
+  transition:0.5s all;
+  -webkit-transition:0.5s all;
+  -o-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -ms-transition:0.5s all;
+}
 input[type="submit"] {
-  padding: 12px 38px;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: #003b64;
-  color: white;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  margin: 45px auto 31px;
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -o-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -ms-transition: 0.5s all;
-  &:hover {
-    background: rgba(213, 38, 133, 0.64);
+    padding: 12px 38px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #003b64;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    margin: 45px auto 31px;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -ms-transition: 0.5s all;
-  }
 }
-
-.w3layouts-main p {
-  a {
+input[type="submit"]:hover {
+  background:rgba(213, 38, 133, 0.64);
+  transition:0.5s all;
+  -webkit-transition:0.5s all;
+  -o-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -ms-transition:0.5s all;
+}
+.w3layouts-main p a {
     text-transform: uppercase;
     font-size: 18px;
-    text-decoration: underline;
+  text-decoration:underline;
     letter-spacing: 1px;
     color: #fff;
     padding: 10px;
-  }
-  font-size: 17px;
-  color: #fff;
 }
-
+.w3layouts-main p {
+    font-size: 17px;
+    color: #fff;
+}
 /*--//main--*/
 
 /*--footer--*/
-
-.footer-w3l {
-  p {
+.footer-w3l p {
     margin: 4em 0em;
     color: #000;
     font-size: 15px;
     font-weight: 300;
     letter-spacing: 2px;
-  }
-  a {
-    color: rgba(208, 95, 216, 0.9);
-    &:hover {
-      color: rgba(19, 129, 206, 0.82);
-      text-decoration: underline;
-    }
-  }
 }
-
+.footer-w3l a {
+    color:rgba(208, 95, 216, 0.9);
+}
+.footer-w3l a:hover {
+    color:rgba(19, 129, 206, 0.82);;
+    text-decoration: underline;
+}
 /*--//footer--*/
 
 /*--responsive--*/
-@media (max-width: 1440px) {
+@media(max-width:1440px){
   .w3layouts-main {
     width: 28%;
   }
 }
-
-@media (max-width: 1366px) {
+@media(max-width:1366px){
   .w3layouts-main {
     width: 30%;
   }
 }
-
-@media (max-width: 1280px) {
+@media(max-width:1280px){
   .w3layouts-main {
     width: 33%;
   }
@@ -1921,20 +1765,17 @@ input[type="submit"] {
     font-size: 27px;
   }
 }
-
-@media (max-width: 1080px) {
+@media(max-width:1080px){
   .w3layouts-main {
     width: 49%;
   }
 }
-
-@media (max-width: 1024px) {
+@media(max-width:1024px){
   .w3layouts-main {
     width: 40%;
   }
 }
-
-@media (max-width: 991px) {
+@media(max-width:991px){
   .w3layouts-main {
     width: 42%;
   }
@@ -1945,8 +1786,7 @@ input[type="submit"] {
     font-size: 25px;
   }
 }
-
-@media (max-width: 800px) {
+@media(max-width:800px){
   .w3layouts-main {
     width: 51%;
   }
@@ -1958,8 +1798,7 @@ input[type="submit"] {
     font-size: 23px;
   }
 }
-
-@media (max-width: 768px) {
+@media(max-width:768px){
   .w3layouts-main {
     width: 54%;
   }
@@ -1974,8 +1813,7 @@ input[type="submit"] {
     padding: 2em 0em 8.7em;
   }
 }
-
-@media (max-width: 736px) {
+@media(max-width:736px){
   .w3layouts-main {
     width: 56%;
   }
@@ -1986,8 +1824,7 @@ input[type="submit"] {
     padding: 0em;
   }
 }
-
-@media (max-width: 667px) {
+@media(max-width:667px){
   .w3layouts-main {
     width: 61%;
   }
@@ -2001,33 +1838,30 @@ input[type="submit"] {
     margin: 52px 0px;
   }
 }
-
-@media (max-width: 640px) {
+@media (max-width: 640px){
   .w3layouts-main {
     width: 64%;
-  }
+  } 
 }
-
-@media (max-width: 600px) {
+@media (max-width: 600px){
   .w3layouts-main {
     width: 69%;
   }
   .footer-w3l p {
     margin: 3em 0.3em;
-    line-height: 2;
+    line-height:2;
   }
   .agileheader h1 {
     font-size: 29px;
-    letter-spacing: 7px;
+    letter-spacing:7px;
   }
 }
-
-@media (max-width: 568px) {
+@media (max-width: 568px){
   .w3layouts-main {
     width: 73%;
-    p a {
-      font-size: 17px;
-    }
+  }
+  .w3layouts-main p a {
+    font-size: 17px;
   }
   .agileheader h1 {
     font-size: 28px;
@@ -2036,103 +1870,92 @@ input[type="submit"] {
     font-size: 20px;
   }
 }
-
-@media (max-width: 480px) {
+@media (max-width: 480px){
   .agileheader h1 {
     font-size: 26px;
-    letter-spacing: 6px;
+    letter-spacing:6px;
   }
-  .w3layouts-main {
-    h2 {
-      font-size: 19px;
-    }
-    span {
-      width: 38%;
-      font-size: 15px;
-    }
-    h6 {
-      width: 44%;
-      font-size: 15px;
-    }
-    p {
-      font-size: 16px;
-      width: 105%;
-      a {
-        font-size: 17px;
-        letter-spacing: 0px;
-      }
-    }
+  .w3layouts-main h2 {
+    font-size: 19px;
   }
-  input {
-    &[type="submit"] {
-      font-size: 17px;
-    }
-    &[type="email"], &[type="password"] {
-      width: 86%;
-    }
+  .w3layouts-main span {
+    width: 38%;
+    font-size: 15px;
+  }
+  .w3layouts-main h6 {
+    width: 44%;
+    font-size: 15px;
+  }
+   .w3layouts-main p {
+    font-size: 16px;
+    width: 105%;
+  }
+  .w3layouts-main p a {
+    font-size: 17px;
+    letter-spacing: 0px;
+  }
+  input[type="submit"] {
+    font-size: 17px;
+  }
+  input[type="email"], input[type="password"] {
+    width: 86%;
   }
   .footer-w3l p {
     letter-spacing: 1px;
   }
 }
-
-@media (max-width: 414px) {
+@media (max-width: 414px){
   .agileheader h1 {
     font-size: 25px;
-    letter-spacing: 4px;
+    letter-spacing:4px;
     margin: 34px 0px;
   }
+  .w3layouts-main h2 {
+    font-size: 18px;
+  }
   .w3layouts-main {
-    h2 {
-      font-size: 18px;
-    }
     padding: 34px 26px;
-    span {
-      font-size: 15px;
-      width: 41%;
-      margin-top: 9px;
-    }
   }
-  input {
-    &[type="email"], &[type="password"] {
-      width: 84%;
-      padding: 13px 0px 13px 40px;
-      margin: 10px 0px;
-    }
+  .w3layouts-main span {
+    font-size: 15px;
+    width: 41%;
+    margin-top: 9px;
   }
-  .w3layouts-main {
-    h6 {
-      font-size: 15px;
-      width: 48%;
-      margin-top: 9px;
-    }
-    p {
-      width: 95%;
-      line-height: 32px;
-      a {
-        font-size: 16px;
-        letter-spacing: 1px;
-      }
-    }
+  input[type="email"], input[type="password"] {
+    width: 84%;
+    padding: 13px 0px 13px 40px;
+    margin: 10px 0px;
+  }
+  .w3layouts-main h6 {
+    font-size: 15px;
+    width: 48%;
+    margin-top: 9px;
+  }
+  .w3layouts-main p {
+    width: 95%;
+    line-height: 32px;
+  }
+  .w3layouts-main p a {
+    font-size: 16px;
+    letter-spacing: 1px;
   }
   .footer-w3l p {
     margin: 2em 0.6em;
-    line-height: 1.8;
+    line-height:1.8;
   }
   input[type="submit"] {
     margin: 45px auto 25px;
   }
+  .footer-w3l p {
+    margin: 2em 1.7em;
+    line-height: 2;
+    letter-spacing:0px;
+  }
   .footer-w3l {
-    p {
-      margin: 2em 1.7em;
-      line-height: 2;
-      letter-spacing: 0px;
-    }
     padding: 0.8em 0em;
   }
 }
-
-@media (max-width: 384px) {
+@media (max-width: 384px){
   .agileheader h1 {
     font-size: 23px;
     margin: 31px 0px;
@@ -2140,30 +1963,30 @@ input[type="submit"] {
   .w3layouts-main {
     padding: 30px 26px;
   }
-  input {
-    &[type="name"], &[type="email"], &[type="password"] {
-      margin: 10px 0px;
-      width: 83%;
-      padding: 10px 0px 10px 39px;
-    }
-    &[type="name"], &[type="email"] {
-      background: url("../assets/mail.png") no-repeat 9px 8px;
-      background-size: 22px;
-    }
-    &[type="password"] {
-      background: url("../assets/pass.png") no-repeat 6px 6px;
-      background-size: 26px;
-    }
+  input[type="name"], input[type="email"], input[type="password"] {
+    margin: 10px 0px;
+    width: 83%;
+    padding: 10px 0px 10px 39px;
   }
-  .w3layouts-main {
-    span {
-      width: 44%;
-      margin-top: 12px;
-    }
-    h6 {
-      width: 51%;
-      margin-top: 12px;
-    }
+  input[type="name"] {
+    background: url("../assets/mail.png") no-repeat 9px 8px;
+    background-size: 22px;
+  }
+  input[type="email"] {
+    background: url("../assets/mail.png") no-repeat 9px 8px;
+    background-size: 22px;
+  }
+  input[type="password"] {
+    background: url("../assets/pass.png") no-repeat 6px 6px;
+    background-size: 26px;
+  }
+  .w3layouts-main span {
+    width: 44%;
+    margin-top: 12px;
+  }
+  .w3layouts-main h6 {
+    width: 51%;
+    margin-top: 12px;
   }
   input[type="submit"] {
     padding: 12px 52px;
@@ -2180,29 +2003,31 @@ input[type="submit"] {
     background: #2c2c2c;
   }
 }
-
-@media (max-width: 375px) {
+@media (max-width: 375px){
   .agileheader h1 {
     margin: 32px 0px;
   }
+  .w3layouts-main span {
+    width: 45%;
+    margin-top: 10px;
+  }
+  .w3layouts-main h6 {
+    width: 53%;
+    margin-top: 10px;
+    font-size: 14px;
+  }
   .w3layouts-main {
-    span {
-      width: 45%;
-      margin-top: 10px;
-    }
-    h6 {
-      width: 53%;
-      margin-top: 10px;
-      font-size: 14px;
-    }
     padding: 24px 34px;
-    width: 65%;
-    span, h6 {
-      width: 100%;
-    }
-    h2 {
-      letter-spacing: 1px;
-    }
+     width: 65%;
+  }
+  .w3layouts-main span {
+    width: 100%;
+  }
+  .w3layouts-main h6 {
+    width: 100%;
+  }
+  .w3layouts-main h2 {
+    letter-spacing: 1px;
   }
   input[type="submit"] {
     padding: 12px 33px;
@@ -2214,50 +2039,45 @@ input[type="submit"] {
     width: 100%;
     line-height: 28px;
   }
+  .footer-w3l p {
+    line-height: 0px;
+  }
   .footer-w3l {
-    p {
-      line-height: 0px;
-    }
     padding: 0.7em;
   }
-  input {
-    &[type="name"], &[type="email"], &[type="password"] {
-      width: 82%;
-    }
+  input[type="name"], input[type="email"], input[type="password"] {
+    width: 82%;
   }
 }
-
-@media (max-width: 320px) {
+@media (max-width: 320px){
   .agileheader h1 {
     font-size: 20px;
     margin: 20px 0px;
-    letter-spacing: 3px;
+    letter-spacing:3px;
+  }
+  .w3layouts-main h2 {
+    font-size: 17px;
+    letter-spacing:0px;
   }
   .w3layouts-main {
-    h2 {
-      font-size: 17px;
-      letter-spacing: 0px;
-    }
     padding: 24px 28px;
     width: 73%;
   }
-  input {
-    &[type="name"], &[type="email"], &[type="password"] {
-      width: 81%;
-      padding: 12px 0px 12px 38px;
-    }
-    &[type="name"] {
-      background: url("../assets/mail.png") no-repeat 9px 8px;
-      background-size: 22px;
-    }
-    &[type="email"] {
-      background: url("../assets/mail.png") no-repeat 8px 9px;
-      background-size: 23px;
-    }
-    &[type="password"] {
-      background: url("../assets/pass.png") no-repeat 6px 6px;
-      background-size: 26px;
-    }
+  input[type="name"], input[type="email"], input[type="password"] {
+    width: 81%;
+    padding: 12px 0px 12px 38px;
+  }
+  input[type="name"] {
+    background: url("../assets/mail.png") no-repeat 9px 8px;
+    background-size: 22px;
+  }
+  input[type="email"] {
+    background: url("../assets/mail.png") no-repeat 8px 9px;
+    background-size: 23px;
+  }
+  input[type="password"] {
+    background: url("../assets/pass.png") no-repeat 6px 6px;
+    background-size: 26px;
   }
   .w3layouts-main span {
     font-size: 14px;
@@ -2267,16 +2087,16 @@ input[type="submit"] {
   }
   .w3layouts-main p {
     font-size: 15px;
-    a {
-      font-size: 15px;
-      letter-spacing: 0px;
-    }
+  }
+  .w3layouts-main p a {
+    font-size: 15px;
+    letter-spacing: 0px;
   }
   .footer-w3l p {
+
     letter-spacing: 0px;
     line-height: 27px;
     margin: 0em 0.5em;
   }
 }
-
 /*--//responsive--*/

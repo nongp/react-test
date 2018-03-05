@@ -8,7 +8,7 @@
 <div class="main-w3l">
 <div class="w3layouts-main">
   <h2>สมัครสมาชิก</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
      <div class="form-group" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}">
         <%= f.email_field :email, autofocus: true, placeholder: "อีเมล์", class: "form-control" %>
@@ -21,14 +21,6 @@
       <div class="form-group" >
         <%= f.text_field :fullname, autofocus: true, placeholder: "ชื่อ - สกุล", class: "form-control" %>
       </div>
-         
-          <div>
-              <% if devise_mapping.rememberable? %>
-              <%= f.check_box :remember_me %> จดจำฉันไว้ในระบบ
-            <% end %>                  
-            <span> <%= link_to "ลืมรหัสผ่าน?", new_user_password_path %>
-          </div>
-          </span>
 
         <div class="actions">
         <%= f.submit "สมัรสมาชิก", class: "btn btn-normal btn-block" %>
