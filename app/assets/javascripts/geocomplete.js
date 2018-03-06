@@ -47,6 +47,7 @@
     detailsScope: null,
     autoselect: true,
     location: false,
+    language: "th",
 
     mapOptions: {
       zoom: 14,
