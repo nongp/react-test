@@ -61,9 +61,10 @@ gem 'pg', '~> 0.18'
 
 gem 'gmaps4rails'
 
-gem 'paperclip-ffmpeg', '~> 1.2'
+gem 'bloggy'
 
 gem 'dotenv-rails'
+
 
 
 group :production do
