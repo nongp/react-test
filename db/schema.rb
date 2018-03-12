@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20180306071030) do
     t.integer  "status",          default: 1
     t.string   "reservation_fee"
     t.integer  "guest_arrive"
+    t.integer  "commission"
     t.index ["room_id"], name: "index_reservations_on_room_id", using: :btree
     t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
   end
