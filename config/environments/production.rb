@@ -90,17 +90,33 @@ Rails.application.configure do
     password: '3f81f9067ee0716fe968ba28cdf0d201'
   }
 
+
   config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_host_name => 's3-ap-southeast-1.amazonaws.com',
-  :s3_credentials => { 
-    :bucket => ENV['AWS_BUCKET'],
-    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    storage: :s3,
+    s3_host_name: 's3-ap-southeast-1.amazonaws.com',
+    s3_region: ENV['AWS_S3_REGION'],
+    s3_credentials: { 
+      bucket: ENV['AWS_BUCKET'],   
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] 
+    }
+  }
+
+ 
+ # config.paperclip_defaults = {
+ # :storage => :s3,
+ # :s3_host_name => 's3-ap-southeast-1.amazonaws.com',
+ # :s3_credentials => { 
+ #   :bucket => ENV['AWS_BUCKET'],
+ #   :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+ #   :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     
 
-  }
-}
+ # }
+#} 
+
+
+
 
 # config.paperclip_defaults = {
 #   storage: :s3,
