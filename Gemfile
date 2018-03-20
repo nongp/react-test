@@ -59,13 +59,7 @@ gem 'omise'
 
 gem 'pg', '~> 0.18'
 
-gem 'gmaps4rails'
-
-gem 'bloggy'
-
 gem 'dotenv-rails'
-
-
 
 group :production do
   gem 'rails_12factor'

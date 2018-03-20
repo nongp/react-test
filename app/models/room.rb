@@ -8,8 +8,8 @@ class Room < ApplicationRecord
   has_many :guest_reviews
   has_many :calendars
 
-  reverse_geocoded_by :latitude, :longitude
-  after_validation :reverse_geocode 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   validates :home_type, presence: true
   validates :room_type, presence: true
