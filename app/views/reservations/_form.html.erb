@@ -40,18 +40,22 @@
             </tr>
             <tr id="special_details">
               <td colspan="2" class="total">
-                ราคาวันหยุด<br/>
+                ราคาล่าสุด<br/>
                 <ul id="special_list"></ul>
               </td>
-            </tr>
-            <tr>
-              <td>เข้าพักทั้งหมด <select id='no_of_guests'></select> ท่าน</td>
-              <td class="text-right"> <b><span id="reservation_discount"></span></b>บ.</td>
             </tr>
             <tr>
               <td class="total">รวม</td>
               <td class="text-right"><b><span id="reservation_total"></span></b>บ.</td>
             </tr>
+            <!-- <tr>
+              <td>เข้าพักทั้งหมด <select id='no_of_guests'></select> ท่าน</td>
+              <td class="text-right"> <b><span id="reservation_discount"></span></b>บ.</td>
+            </tr>
+            <tr>
+              <td class="total">รวมทั้งสิ้น</td>
+              <td class="text-right"><b><span id="net_reservation_total"></span></b>บ.</td>
+            </tr> -->
           </tbody>
         </table>
         <br/>
@@ -137,29 +141,34 @@
 
 
 
-
             var selectedSpecialDate = specialDates.filter(function(sDate){
                 var d = $.datepicker.formatDate('d-m-yy',new Date(sDate.day));
                 return selectedDates.indexOf(d) !== -1;
             });
 
-            var discount = (<%=@room.max_guests %> - no_of_guests) * <%= @room.extra_guest_fee %> * nights;
-            var total = ((nights - selectedSpecialDate.length) * <%= @room.price %>) + discount ;
+            
+            var total = ((nights - selectedSpecialDate.length) * <%= @room.price %>);
+
             if (selectedSpecialDate.length > 0) {
               $('#special_details').show();
 
               selectedSpecialDate.map(function (date) {
-                  total += date.price
-                  $('#special_list').append('<li class="text-right">('+ date.day + '): $' + date.price +'</li>')
+                total += date.price
+                  $('#special_list').append('<li class="text-right">คืนวันที่ ('+ date.day + '): ' + date.price +'บ.</li>')
               });
+
             } else {
               $('#special_details').hide();
             }
             //----------- END NEW UPDATE
 
+
+             
+
             $('#reservation_nights').text(nights);
             $('#reservation_total').text(total);
             $('#reservation_discount').text(discount);
+            
           }
         }
       });
@@ -226,6 +235,9 @@ $('#no_of_guests').on('change', function() {
   var end_date = $('#reservation_end_date').datepicker('getDate');
   var nights = (end_date - start_date)/1000/60/60/24 + 1;
   var selectedDates = [];
+  
+  
+
 
   // Step 1: Create an array of selected dates
   while (start_date <= end_date) {
@@ -244,12 +256,14 @@ $('#no_of_guests').on('change', function() {
   });
 
 
-  var discount = (<%=@room.max_guests %> - selectedValue) * <%= @room.extra_guest_fee %> * nights;
-  var total = ((nights - selectedSpecialDate.length) * <%= @room.price %>) + discount ;
+  var total = (<%= @room.price %> * (nights - selectedSpecialDate.length));
+   //var total = (<%= @room.price %> * (nights - selectedSpecialDate.length));
+  //var discount = (<%=@room.max_guests %> - no_of_guests) * <%= @room.extra_guest_fee %> * nights;
 
   $('#reservation_nights').text(nights);
   $('#reservation_total').text(total);
   $('td #reservation_discount').text(discount);
+  
 });
 
 

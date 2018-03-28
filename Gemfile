@@ -61,6 +61,10 @@ gem 'pg', '~> 0.18'
 
 gem 'dotenv-rails'
 
+gem "react_on_rails", "10.0.0"
+gem "webpacker", "~> 3.0"
+
+
 group :production do
   gem 'rails_12factor'
   gem 'redis', '~> 3.2'
